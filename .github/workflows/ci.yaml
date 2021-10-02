@@ -8,4 +8,9 @@ on:
 
 jobs:
   release:
-    runs
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    steps:
+ 
