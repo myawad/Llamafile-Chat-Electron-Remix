@@ -28,4 +28,11 @@ const buttonVariants = cva(
         icon: "h-9 w-9",
       },
     },
-    defaultVa
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+);
+
+export interface
