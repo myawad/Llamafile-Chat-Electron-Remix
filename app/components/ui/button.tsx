@@ -42,4 +42,10 @@ export interface ButtonProps
   disableOnFormSubmission?: boolean;
 }
 
-const Button = React.forwardR
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      className,
+      variant,
+      size,
+      
