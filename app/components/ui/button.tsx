@@ -37,4 +37,9 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+  disableOnFormSubmission?: boolean;
+}
+
+const Button = React.forwardR
