@@ -48,4 +48,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       variant,
       size,
-      
+      asChild = false,
+      disabled: _disabled,
+      disableOnFormSubmission,
+      ...props
+    },
+    ref
