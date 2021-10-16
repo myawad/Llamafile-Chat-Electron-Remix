@@ -60,4 +60,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const disabled =
       _disabled || (disableOnFormSubmission && formStatus?.pending);
 
- 
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+     
