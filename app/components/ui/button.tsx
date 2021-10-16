@@ -57,4 +57,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const Comp = asChild ? Slot : "button";
     const formStatus = useFormStatus();
-    con
+    const disabled =
+      _disabled || (disableOnFormSubmission && formStatus?.pending);
+
+ 
