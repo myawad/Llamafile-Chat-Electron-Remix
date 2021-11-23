@@ -15,4 +15,6 @@ const Progress = React.forwardRef<
     )}
     {...props}
   >
-    <ProgressPrimi
+    <ProgressPrimitive.Indicator
+      className="h-full w-full flex-1 bg-primary transition-all"
+      sty
