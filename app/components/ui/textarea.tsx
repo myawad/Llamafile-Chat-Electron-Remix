@@ -1,4 +1,8 @@
 import * as React from "react";
 import { useFormStatus } from "react-dom";
 
-import { cn } from "@/lib/ut
+import { cn } from "@/lib/utils";
+
+export interface TextareaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+ 
