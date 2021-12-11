@@ -8,4 +8,9 @@ export interface TextareaProps
   disableOnFormSubmission?: boolean;
 }
 
-const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProp
+const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
+  (
+    { className, disabled: _disabled, disableOnFormSubmission, ...props },
+    ref
+  ) => {
+ 
