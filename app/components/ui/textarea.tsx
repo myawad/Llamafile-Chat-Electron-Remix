@@ -13,4 +13,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     { className, disabled: _disabled, disableOnFormSubmission, ...props },
     ref
   ) => {
- 
+    const formStatus = useFormStatus();
+    const disabled =
+      _disabled || (disableOnFormSubmission && formStatu
