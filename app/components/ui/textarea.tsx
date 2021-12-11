@@ -15,4 +15,9 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ) => {
     const formStatus = useFormStatus();
     const disabled =
-      _disabled || (disableOnFormSubmission && formStatu
+      _disabled || (disableOnFormSubmission && formStatus?.pending);
+
+    return (
+      <textarea
+        className={cn(
+          "flex min-h-[60px] w-fu
