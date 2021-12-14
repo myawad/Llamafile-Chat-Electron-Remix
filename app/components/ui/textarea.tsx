@@ -25,4 +25,11 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         )}
         ref={ref}
         disabled={disabled}
-  
+        {...props}
+      />
+    );
+  }
+);
+Textarea.displayName = "Textarea";
+
+export { Textarea };
