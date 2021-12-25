@@ -13,4 +13,9 @@ export async function createChat() {
     })
     .returning({ id: chat.id });
   if (!result[0]?.id) return undefined;
-  return result[0].i
+  return result[0].id;
+}
+
+export async function createChatMessage(
+  chatId: string,
+  author: "assistant" | "human",
