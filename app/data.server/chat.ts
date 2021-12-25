@@ -19,3 +19,10 @@ export async function createChat() {
 export async function createChatMessage(
   chatId: string,
   author: "assistant" | "human",
+  content: string
+) {
+  const result = await db
+    .insert(message)
+    .values({
+      author,
+      c
