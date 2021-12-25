@@ -11,4 +11,6 @@ export async function createChat() {
     .values({
       title: `Chat ${count + 1}`,
     })
-    .
+    .returning({ id: chat.id });
+  if (!result[0]?.id) return undefined;
+  return result[0].i
