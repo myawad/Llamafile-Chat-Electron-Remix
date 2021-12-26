@@ -25,4 +25,8 @@ export async function createChatMessage(
     .insert(message)
     .values({
       author,
-      c
+      chatId,
+      content,
+    })
+    .returning({ id: message.id });
+  if (!result[0]?.id) 
