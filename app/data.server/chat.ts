@@ -29,4 +29,9 @@ export async function createChatMessage(
       content,
     })
     .returning({ id: message.id });
-  if (!result[0]?.id) 
+  if (!result[0]?.id) return undefined;
+  return result[0].id;
+}
+
+export async function createStreamingChatMessage(
+ 
