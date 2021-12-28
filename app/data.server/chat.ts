@@ -38,4 +38,11 @@ export async function createStreamingChatMessage(
   author: "assistant" | "human",
   content: ReadableStream<string>
 ) {
-  const result = 
+  const result = await db
+    .insert(message)
+    .values({
+      author,
+      chatId,
+      content: "",
+    })
+    .returni
