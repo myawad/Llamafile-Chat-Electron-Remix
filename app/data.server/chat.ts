@@ -34,4 +34,8 @@ export async function createChatMessage(
 }
 
 export async function createStreamingChatMessage(
- 
+  chatId: string,
+  author: "assistant" | "human",
+  content: ReadableStream<string>
+) {
+  const result = 
