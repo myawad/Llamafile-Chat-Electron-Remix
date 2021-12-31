@@ -45,4 +45,10 @@ export async function createStreamingChatMessage(
       chatId,
       content: "",
     })
-    .returni
+    .returning({ id: message.id });
+  if (!result[0]?.id) return undefined;
+  const id = result[0].id;
+
+  content
+    .pipeTo(
+    
