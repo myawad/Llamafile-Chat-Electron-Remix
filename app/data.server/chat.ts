@@ -51,4 +51,7 @@ export async function createStreamingChatMessage(
 
   content
     .pipeTo(
-    
+      new WritableStream({
+        async write(chunk) {
+          const updated = await db
+            
