@@ -54,4 +54,6 @@ export async function createStreamingChatMessage(
       new WritableStream({
         async write(chunk) {
           const updated = await db
-            
+            .update(message)
+            .set({
+              content: sql`${message.cont
