@@ -56,4 +56,7 @@ export async function createStreamingChatMessage(
           const updated = await db
             .update(message)
             .set({
-              content: sql`${message.cont
+              content: sql`${message.content} || ${chunk}`,
+            })
+            .where(eq(message.id, id))
+            .returnin
