@@ -60,4 +60,8 @@ export async function createStreamingChatMessage(
             })
             .where(eq(message.id, id))
             .returning({ id: message.id });
-          if (!updated[0]?.id) throw new Error("Failed to upd
+          if (!updated[0]?.id) throw new Error("Failed to update message");
+        },
+        async close() {
+          const items = await db
+            .select({ conte
