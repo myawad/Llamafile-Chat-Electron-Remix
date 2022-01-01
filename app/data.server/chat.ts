@@ -59,4 +59,5 @@ export async function createStreamingChatMessage(
               content: sql`${message.content} || ${chunk}`,
             })
             .where(eq(message.id, id))
-            .returnin
+            .returning({ id: message.id });
+          if (!updated[0]?.id) throw new Error("Failed to upd
