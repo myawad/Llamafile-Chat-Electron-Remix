@@ -64,4 +64,7 @@ export async function createStreamingChatMessage(
         },
         async close() {
           const items = await db
-            .select({ conte
+            .select({ content: message.content })
+            .from(message)
+            .where(eq(message.id, id));
+          const item
