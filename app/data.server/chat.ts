@@ -67,4 +67,6 @@ export async function createStreamingChatMessage(
             .select({ content: message.content })
             .from(message)
             .where(eq(message.id, id));
-          const item
+          const item = items[0];
+          if (!item) throw new Error("Failed to get message content");
+          await d
