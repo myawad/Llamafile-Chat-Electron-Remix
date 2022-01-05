@@ -77,4 +77,9 @@ export async function createStreamingChatMessage(
             .where(eq(message.id, id))
             .returning({
               id: message.id,
-           
+            });
+        },
+      })
+    )
+    .catch((error) => {
+      console.error("Failed to save streaming mess
