@@ -74,4 +74,7 @@ export async function createStreamingChatMessage(
             .set({
               content: item.content.trim(),
             })
-  
+            .where(eq(message.id, id))
+            .returning({
+              id: message.id,
+           
