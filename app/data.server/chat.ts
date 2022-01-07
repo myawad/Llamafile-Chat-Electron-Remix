@@ -82,4 +82,12 @@ export async function createStreamingChatMessage(
       })
     )
     .catch((error) => {
-      console.error("Failed to save streaming mess
+      console.error("Failed to save streaming message:", error);
+    });
+
+  return id;
+}
+
+export async function listChats() {
+  return await db.query.chat.findMany({
+    ord
