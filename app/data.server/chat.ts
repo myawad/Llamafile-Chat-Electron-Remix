@@ -90,4 +90,9 @@ export async function createStreamingChatMessage(
 
 export async function listChats() {
   return await db.query.chat.findMany({
-    ord
+    orderBy: desc(chat.createdAt),
+  });
+}
+
+export async function getChat(id: string) {
+  return await db.query.cha
