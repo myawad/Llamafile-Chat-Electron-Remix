@@ -95,4 +95,10 @@ export async function listChats() {
 }
 
 export async function getChat(id: string) {
-  return await db.query.cha
+  return await db.query.chat.findFirst({
+    where: eq(chat.id, id),
+  });
+}
+
+export async function deleteChat(id: string) {
+  await db.delete(chat).
