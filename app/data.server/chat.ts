@@ -101,4 +101,8 @@ export async function getChat(id: string) {
 }
 
 export async function deleteChat(id: string) {
-  await db.delete(chat).
+  await db.delete(chat).where(eq(chat.id, id));
+}
+
+export async function getMessages(chatId: string) {
+  return awai
