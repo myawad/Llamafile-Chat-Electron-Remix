@@ -105,4 +105,6 @@ export async function deleteChat(id: string) {
 }
 
 export async function getMessages(chatId: string) {
-  return awai
+  return await db.query.message.findMany({
+    where: eq(message.chatId, chatId),
+    orderBy: asc(message.
