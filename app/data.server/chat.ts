@@ -116,4 +116,9 @@ export async function getMessages(chatId: string) {
   });
 }
 
-export async function 
+export async function addMessage(
+  chatId: string,
+  author: "assistant" | "human",
+  content: string
+) {
+  const result = await db
