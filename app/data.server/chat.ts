@@ -122,3 +122,10 @@ export async function addMessage(
   content: string
 ) {
   const result = await db
+    .insert(message)
+    .values({
+      author,
+      chatId,
+      content,
+    })
+    .returning({ 
