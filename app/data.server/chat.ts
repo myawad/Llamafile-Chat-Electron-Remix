@@ -128,4 +128,7 @@ export async function addMessage(
       chatId,
       content,
     })
-    .returning({ 
+    .returning({ id: message.id });
+  if (!result[0]?.id) return undefined;
+  return result[0].id;
+}
