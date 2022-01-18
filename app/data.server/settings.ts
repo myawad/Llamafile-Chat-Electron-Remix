@@ -9,4 +9,7 @@ import { desc, eq } from "drizzle-orm";
 
 import { db, prompt } from "@/db.server";
 
-export async function 
+export async function getPrompts() {
+  return await db.query.prompt.findMany({
+    orderBy: desc(prompt.createdAt),
+    columns
