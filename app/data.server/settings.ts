@@ -19,4 +19,8 @@ export async function getPrompts() {
   });
 }
 
-export async function getPrompt(id: 
+export async function getPrompt(id: string) {
+  return (
+    await db.query.prompt.findFirst({
+      where: eq(prompt.id, id),
+      colum
