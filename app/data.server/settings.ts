@@ -12,4 +12,11 @@ import { db, prompt } from "@/db.server";
 export async function getPrompts() {
   return await db.query.prompt.findMany({
     orderBy: desc(prompt.createdAt),
-    columns
+    columns: {
+      id: true,
+      content: true,
+    },
+  });
+}
+
+export async function getPrompt(id: 
