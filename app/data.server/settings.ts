@@ -23,4 +23,12 @@ export async function getPrompt(id: string) {
   return (
     await db.query.prompt.findFirst({
       where: eq(prompt.id, id),
-      colum
+      columns: {
+        content: true,
+      },
+    })
+  )?.content;
+}
+
+export async function addPrompt(content: string) {
+ 
