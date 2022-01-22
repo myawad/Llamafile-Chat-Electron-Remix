@@ -36,4 +36,8 @@ export async function addPrompt(content: string) {
     .values({
       content,
     })
-    .returning({ i
+    .returning({ id: prompt.id });
+}
+
+export async function deletePrompt(id: string) {
+  await db
