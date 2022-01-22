@@ -31,4 +31,9 @@ export async function getPrompt(id: string) {
 }
 
 export async function addPrompt(content: string) {
- 
+  return await db
+    .insert(prompt)
+    .values({
+      content,
+    })
+    .returning({ i
