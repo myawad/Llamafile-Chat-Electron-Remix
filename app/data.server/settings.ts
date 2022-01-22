@@ -40,4 +40,8 @@ export async function addPrompt(content: string) {
 }
 
 export async function deletePrompt(id: string) {
-  await db
+  await db.delete(prompt).where(eq(prompt.id, id));
+}
+
+export function getLlamafileDirectory() {
+  let llamafileD
