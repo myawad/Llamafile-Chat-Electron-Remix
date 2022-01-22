@@ -44,4 +44,6 @@ export async function deletePrompt(id: string) {
 }
 
 export function getLlamafileDirectory() {
-  let llamafileD
+  let llamafileDir = process.env.LLAMAFILE_PATH;
+  if (llamafileDir) {
+    llamafileDir = path.resolve(llamafileDir);
