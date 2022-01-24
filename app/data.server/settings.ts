@@ -53,4 +53,8 @@ export function getLlamafileDirectory() {
   return llamafileDir;
 }
 
-e
+export function getSettingsPath() {
+  return path.resolve(os.homedir(), ".remix-llm", "remix-llm.json");
+}
+
+expo
