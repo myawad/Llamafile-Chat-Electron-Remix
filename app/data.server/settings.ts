@@ -47,3 +47,10 @@ export function getLlamafileDirectory() {
   let llamafileDir = process.env.LLAMAFILE_PATH;
   if (llamafileDir) {
     llamafileDir = path.resolve(llamafileDir);
+  } else {
+    llamafileDir = path.resolve(os.homedir(), ".llamafile");
+  }
+  return llamafileDir;
+}
+
+e
