@@ -57,4 +57,6 @@ export function getSettingsPath() {
   return path.resolve(os.homedir(), ".remix-llm", "remix-llm.json");
 }
 
-expo
+export async function getSettings() {
+  const settingsPath = getSettingsPath();
+  const llamafileDir = getLlamaf
