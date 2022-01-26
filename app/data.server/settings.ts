@@ -63,4 +63,8 @@ export async function getSettings() {
 
   try {
     const settings =
-      JSON.parse(await fsp.readFile(settingsPa
+      JSON.parse(await fsp.readFile(settingsPath, "utf-8")) || {};
+    if (
+      settings.activeLLM &&
+      !(await fsp
+        .stat(path.res
