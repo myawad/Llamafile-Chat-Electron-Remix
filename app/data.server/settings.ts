@@ -59,4 +59,8 @@ export function getSettingsPath() {
 
 export async function getSettings() {
   const settingsPath = getSettingsPath();
-  const llamafileDir = getLlamaf
+  const llamafileDir = getLlamafileDirectory();
+
+  try {
+    const settings =
+      JSON.parse(await fsp.readFile(settingsPa
