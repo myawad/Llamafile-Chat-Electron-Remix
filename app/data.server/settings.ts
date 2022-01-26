@@ -67,4 +67,6 @@ export async function getSettings() {
     if (
       settings.activeLLM &&
       !(await fsp
-        .stat(path.res
+        .stat(path.resolve(llamafileDir, settings.activeLLM))
+        .then((s) => s.isFile())
+        .catch(() => 
