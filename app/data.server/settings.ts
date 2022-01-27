@@ -74,4 +74,6 @@ export async function getSettings() {
       settings.activeLLM = undefined;
     }
     if (
-      settings.baseLla
+      settings.baseLlamafile &&
+      !(await fsp
+        .stat(path.resolve(llamafileDir, settings.baseLlamafile)
