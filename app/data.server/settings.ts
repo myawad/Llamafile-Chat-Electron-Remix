@@ -69,4 +69,9 @@ export async function getSettings() {
       !(await fsp
         .stat(path.resolve(llamafileDir, settings.activeLLM))
         .then((s) => s.isFile())
-        .catch(() => 
+        .catch(() => false))
+    ) {
+      settings.activeLLM = undefined;
+    }
+    if (
+      settings.baseLla
