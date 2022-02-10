@@ -76,4 +76,8 @@ export async function getSettings() {
     if (
       settings.baseLlamafile &&
       !(await fsp
-        .stat(path.resolve(llamafileDir, settings.baseLlamafile)
+        .stat(path.resolve(llamafileDir, settings.baseLlamafile))
+        .then((s) => s.isFile())
+        .catch(() => false))
+    ) {
+      setti
