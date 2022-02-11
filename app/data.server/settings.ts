@@ -85,4 +85,8 @@ export async function getSettings() {
 
     if (
       !settings.gpu ||
-      !["AUTO", "APPLE", "AMD", "NVIDIA", "D
+      !["AUTO", "APPLE", "AMD", "NVIDIA", "DISABLE"].includes(settings.gpu)
+    ) {
+      settings.gpu = "AUTO";
+    }
+    if (typeof settings.nGpu
