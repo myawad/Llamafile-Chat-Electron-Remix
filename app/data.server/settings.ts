@@ -89,4 +89,6 @@ export async function getSettings() {
     ) {
       settings.gpu = "AUTO";
     }
-    if (typeof settings.nGpu
+    if (typeof settings.nGpuLayers === "number") {
+      settings.nGpuLayers = settings.nGpuLayers.toString();
+    } else if (!settin
