@@ -80,4 +80,9 @@ export async function getSettings() {
         .then((s) => s.isFile())
         .catch(() => false))
     ) {
-      setti
+      settings.baseLlamafile = undefined;
+    }
+
+    if (
+      !settings.gpu ||
+      !["AUTO", "APPLE", "AMD", "NVIDIA", "D
