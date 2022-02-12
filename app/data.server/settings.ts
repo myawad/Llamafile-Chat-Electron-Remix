@@ -91,4 +91,8 @@ export async function getSettings() {
     }
     if (typeof settings.nGpuLayers === "number") {
       settings.nGpuLayers = settings.nGpuLayers.toString();
-    } else if (!settin
+    } else if (!settings.nGpuLayers) {
+      settings.nGpuLayers = undefined;
+    }
+
+    return settings
