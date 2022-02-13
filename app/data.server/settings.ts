@@ -95,4 +95,11 @@ export async function getSettings() {
       settings.nGpuLayers = undefined;
     }
 
-    return settings
+    return settings;
+  } catch (error) {
+    return {};
+  }
+}
+
+export async function getLLMs() {
+  const llamafileDir = 
