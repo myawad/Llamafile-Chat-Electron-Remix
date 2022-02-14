@@ -102,4 +102,7 @@ export async function getSettings() {
 }
 
 export async function getLLMs() {
-  const llamafileDir = 
+  const llamafileDir = getLlamafileDirectory();
+  await fsp.mkdir(llamafileDir, { recursive: true });
+
+  const files = await fsp.r
