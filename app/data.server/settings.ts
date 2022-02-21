@@ -105,4 +105,8 @@ export async function getLLMs() {
   const llamafileDir = getLlamafileDirectory();
   await fsp.mkdir(llamafileDir, { recursive: true });
 
-  const files = await fsp.r
+  const files = await fsp.readdir(llamafileDir);
+  return files.filter((file) => file.endsWith(".llamafile"));
+}
+
+export async function writeSettings(se
