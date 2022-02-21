@@ -109,4 +109,6 @@ export async function getLLMs() {
   return files.filter((file) => file.endsWith(".llamafile"));
 }
 
-export async function writeSettings(se
+export async function writeSettings(settings: any) {
+  const settingsPath = getSettingsPath();
+  await fsp.mkdir(path.dirname(setti
