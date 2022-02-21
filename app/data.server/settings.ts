@@ -111,4 +111,5 @@ export async function getLLMs() {
 
 export async function writeSettings(settings: any) {
   const settingsPath = getSettingsPath();
-  await fsp.mkdir(path.dirname(setti
+  await fsp.mkdir(path.dirname(settingsPath), { recursive: true });
+  await fsp.writeFile(settingsPath, JSON.stringify(sett
