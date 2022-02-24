@@ -120,4 +120,6 @@ export async function downloadBaseLlamafile(
 ) {
   const llamafileDir = getLlamafileDirectory();
   const response = await fetch(
-    "https:
+    "https://github.com/Mozilla-Ocho/llamafile/releases/download/0.6.2/llamafile-0.6.2"
+  );
+  
