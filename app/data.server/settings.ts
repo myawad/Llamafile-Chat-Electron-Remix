@@ -117,4 +117,7 @@ export async function writeSettings(settings: any) {
 
 export async function downloadBaseLlamafile(
   emitStatus?: (status: number) => void
-) 
+) {
+  const llamafileDir = getLlamafileDirectory();
+  const response = await fetch(
+    "https:
