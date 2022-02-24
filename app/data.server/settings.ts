@@ -112,4 +112,9 @@ export async function getLLMs() {
 export async function writeSettings(settings: any) {
   const settingsPath = getSettingsPath();
   await fsp.mkdir(path.dirname(settingsPath), { recursive: true });
-  await fsp.writeFile(settingsPath, JSON.stringify(sett
+  await fsp.writeFile(settingsPath, JSON.stringify(settings, null, 2));
+}
+
+export async function downloadBaseLlamafile(
+  emitStatus?: (status: number) => void
+) 
