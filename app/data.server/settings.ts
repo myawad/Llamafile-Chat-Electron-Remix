@@ -126,4 +126,6 @@ export async function downloadBaseLlamafile(
 
   let downloaded = 0;
   emitStatus?.(0);
-  co
+  const writeStream = stream.Readable.fromWeb(response.body as any)
+    .pipe(
+      new stream.PassThrough({
