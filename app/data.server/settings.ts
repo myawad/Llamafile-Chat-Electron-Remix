@@ -122,4 +122,8 @@ export async function downloadBaseLlamafile(
   const response = await fetch(
     "https://github.com/Mozilla-Ocho/llamafile/releases/download/0.6.2/llamafile-0.6.2"
   );
-  
+  const contentLength = Number(response.headers.get("content-length"));
+
+  let downloaded = 0;
+  emitStatus?.(0);
+  co
