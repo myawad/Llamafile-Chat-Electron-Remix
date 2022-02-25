@@ -129,3 +129,6 @@ export async function downloadBaseLlamafile(
   const writeStream = stream.Readable.fromWeb(response.body as any)
     .pipe(
       new stream.PassThrough({
+        transform(chunk, encoding, callback) {
+          downloaded += chunk.length;
+          emitStatus?.(
