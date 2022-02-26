@@ -131,4 +131,9 @@ export async function downloadBaseLlamafile(
       new stream.PassThrough({
         transform(chunk, encoding, callback) {
           downloaded += chunk.length;
-          emitStatus?.(
+          emitStatus?.((downloaded / contentLength) * 100);
+          callback(null, chunk);
+        },
+      })
+    )
+    .pipe(fs.c
