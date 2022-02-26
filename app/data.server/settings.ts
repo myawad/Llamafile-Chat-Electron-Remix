@@ -136,4 +136,7 @@ export async function downloadBaseLlamafile(
         },
       })
     )
-    .pipe(fs.c
+    .pipe(fs.createWriteStream(path.resolve(llamafileDir, "llamafile-0.6.2")), {
+      end: true,
+    });
+  a
