@@ -143,4 +143,8 @@ export async function downloadBaseLlamafile(
     writeStream.on("finish", async () => {
       await fsp.chmod(path.resolve(llamafileDir, "llamafile-0.6.2"), 0o755);
       resolve();
-   
+    });
+    writeStream.on("error", reject);
+  });
+
+  const settings = await getSetti
