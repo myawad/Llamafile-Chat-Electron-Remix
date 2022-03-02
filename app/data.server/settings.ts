@@ -141,4 +141,6 @@ export async function downloadBaseLlamafile(
     });
   await new Promise<void>((resolve, reject) => {
     writeStream.on("finish", async () => {
-      await fsp.
+      await fsp.chmod(path.resolve(llamafileDir, "llamafile-0.6.2"), 0o755);
+      resolve();
+   
