@@ -139,4 +139,6 @@ export async function downloadBaseLlamafile(
     .pipe(fs.createWriteStream(path.resolve(llamafileDir, "llamafile-0.6.2")), {
       end: true,
     });
-  a
+  await new Promise<void>((resolve, reject) => {
+    writeStream.on("finish", async () => {
+      await fsp.
