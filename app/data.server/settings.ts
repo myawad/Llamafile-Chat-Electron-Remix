@@ -147,4 +147,6 @@ export async function downloadBaseLlamafile(
     writeStream.on("error", reject);
   });
 
-  const settings = await getSetti
+  const settings = await getSettings();
+  settings.baseLlamafile = "llamafile-0.6.2";
+  await writeSettings(settings
