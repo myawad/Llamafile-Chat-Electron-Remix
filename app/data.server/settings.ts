@@ -149,4 +149,8 @@ export async function downloadBaseLlamafile(
 
   const settings = await getSettings();
   settings.baseLlamafile = "llamafile-0.6.2";
-  await writeSettings(settings
+  await writeSettings(settings);
+}
+
+export async function downloadPhi2(emitStatus?: (status: number) => void) {
+  con
