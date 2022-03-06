@@ -153,4 +153,6 @@ export async function downloadBaseLlamafile(
 }
 
 export async function downloadPhi2(emitStatus?: (status: number) => void) {
-  con
+  const repo = "jartine/phi-2-llamafile";
+  const file = "phi-2.Q4_K_M.llamafile";
+  const llamafileDir = 
