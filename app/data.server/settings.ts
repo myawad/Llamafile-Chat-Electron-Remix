@@ -158,4 +158,6 @@ export async function downloadPhi2(emitStatus?: (status: number) => void) {
   const llamafileDir = getLlamafileDirectory();
 
   const response = await hf.downloadFile({ repo, path: file });
-  if (!response?.body || !res
+  if (!response?.body || !response?.ok)
+    throw new Error("Failed to download phi-2 llamafile");
+  const contentLength = Number(resp
