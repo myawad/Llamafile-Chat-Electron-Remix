@@ -169,4 +169,10 @@ export async function downloadPhi2(emitStatus?: (status: number) => void) {
       new stream.PassThrough({
         transform(chunk, encoding, callback) {
           downloaded += chunk.length;
-          emitStatus?.((down
+          emitStatus?.((downloaded / contentLength) * 100);
+          callback(null, chunk);
+        },
+      })
+    )
+    .pipe(
+      fs.
