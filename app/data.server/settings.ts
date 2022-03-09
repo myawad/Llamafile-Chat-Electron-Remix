@@ -167,4 +167,6 @@ export async function downloadPhi2(emitStatus?: (status: number) => void) {
   const writeStream = stream.Readable.fromWeb(response.body as any)
     .pipe(
       new stream.PassThrough({
-        tra
+        transform(chunk, encoding, callback) {
+          downloaded += chunk.length;
+          emitStatus?.((down
