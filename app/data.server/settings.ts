@@ -175,4 +175,7 @@ export async function downloadPhi2(emitStatus?: (status: number) => void) {
       })
     )
     .pipe(
-      fs.
+      fs.createWriteStream(
+        path.resolve(llamafileDir, "phi-2.Q4_K_M.llamafile")
+      ),
+      { end: 
