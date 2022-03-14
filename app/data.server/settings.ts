@@ -178,4 +178,9 @@ export async function downloadPhi2(emitStatus?: (status: number) => void) {
       fs.createWriteStream(
         path.resolve(llamafileDir, "phi-2.Q4_K_M.llamafile")
       ),
-      { end: 
+      { end: true }
+    );
+  await new Promise((resolve, reject) => {
+    writeStream.on("finish", resolve);
+    writeStream.on("error", reject);
+  }
