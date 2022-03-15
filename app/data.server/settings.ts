@@ -187,4 +187,5 @@ export async function downloadPhi2(emitStatus?: (status: number) => void) {
 
   const settings = await getSettings();
   settings.activeLLM = "phi-2.Q4_K_M.llamafile";
-  await w
+  await writeSettings(settings);
+}
