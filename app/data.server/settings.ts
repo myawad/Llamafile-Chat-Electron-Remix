@@ -183,4 +183,8 @@ export async function downloadPhi2(emitStatus?: (status: number) => void) {
   await new Promise((resolve, reject) => {
     writeStream.on("finish", resolve);
     writeStream.on("error", reject);
-  }
+  });
+
+  const settings = await getSettings();
+  settings.activeLLM = "phi-2.Q4_K_M.llamafile";
+  await w
