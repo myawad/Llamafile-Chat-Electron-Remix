@@ -8,4 +8,6 @@ import { drizzle } from "drizzle-orm/better-sqlite3";
 import { migrate } from "drizzle-orm/better-sqlite3/migrator";
 import { text, sqliteTable } from "drizzle-orm/sqlite-core";
 import Database from "better-sqlite3";
-imp
+import { v4 as uuid } from "uuid";
+
+// @ts-expect-error - this is a workaround for drizzle transforming thi
