@@ -4,4 +4,5 @@ import * as path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { sql } from "drizzle-orm";
-import { drizzle } 
+import { drizzle } from "drizzle-orm/better-sqlite3";
+import { migrate } from "drizzle-orm/better-sqlite3/migrat
