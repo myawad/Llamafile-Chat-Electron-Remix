@@ -10,4 +10,6 @@ import { text, sqliteTable } from "drizzle-orm/sqlite-core";
 import Database from "better-sqlite3";
 import { v4 as uuid } from "uuid";
 
-// @ts-expect-error - this is a workaround for drizzle transforming thi
+// @ts-expect-error - this is a workaround for drizzle transforming this to CJS for the migrations CLI
+if (typeof __dirname === "undefined") {
+  var __dirname = path.dirname(fileU
