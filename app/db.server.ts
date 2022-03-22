@@ -12,4 +12,9 @@ import { v4 as uuid } from "uuid";
 
 // @ts-expect-error - this is a workaround for drizzle transforming this to CJS for the migrations CLI
 if (typeof __dirname === "undefined") {
-  var __dirname = path.dirname(fileU
+  var __dirname = path.dirname(fileURLToPath(import.meta.url));
+}
+
+export const chat = sqliteTable("chat", {
+  id: text("id")
+    .primaryKey(
