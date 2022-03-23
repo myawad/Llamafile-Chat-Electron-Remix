@@ -21,4 +21,9 @@ export const chat = sqliteTable("chat", {
     .notNull()
     .$defaultFn(() => uuid()),
   title: text("title").notNull(),
-  createdAt: text("
+  createdAt: text("created_at")
+    .notNull()
+    .default(sql`CURRENT_TIMESTAMP`),
+});
+
+export const message = sqliteTable("message", {
