@@ -27,3 +27,8 @@ export const chat = sqliteTable("chat", {
 });
 
 export const message = sqliteTable("message", {
+  id: text("id")
+    .primaryKey()
+    .notNull()
+    .$defaultFn(() => uuid()),
+  author: text("author", { 
