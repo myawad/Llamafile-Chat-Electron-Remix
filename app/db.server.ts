@@ -17,4 +17,8 @@ if (typeof __dirname === "undefined") {
 
 export const chat = sqliteTable("chat", {
   id: text("id")
-    .primaryKey(
+    .primaryKey()
+    .notNull()
+    .$defaultFn(() => uuid()),
+  title: text("title").notNull(),
+  createdAt: text("
