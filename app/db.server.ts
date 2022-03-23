@@ -31,4 +31,6 @@ export const message = sqliteTable("message", {
     .primaryKey()
     .notNull()
     .$defaultFn(() => uuid()),
-  author: text("author", { 
+  author: text("author", { enum: ["assistant", "human"] }).notNull(),
+  content: text("content").notNull(),
+  createdAt: 
