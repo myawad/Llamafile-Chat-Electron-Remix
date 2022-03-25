@@ -33,4 +33,7 @@ export const message = sqliteTable("message", {
     .$defaultFn(() => uuid()),
   author: text("author", { enum: ["assistant", "human"] }).notNull(),
   content: text("content").notNull(),
-  createdAt: 
+  createdAt: text("created_at")
+    .notNull()
+    .default(sql`CURRENT_TIMESTAMP`),
+  chatId: text("chat_id
