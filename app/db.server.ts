@@ -36,4 +36,9 @@ export const message = sqliteTable("message", {
   createdAt: text("created_at")
     .notNull()
     .default(sql`CURRENT_TIMESTAMP`),
-  chatId: text("chat_id
+  chatId: text("chat_id")
+    .notNull()
+    .references(() => chat.id, { onDelete: "cascade" }),
+});
+
+export const prompt = sqliteTable
