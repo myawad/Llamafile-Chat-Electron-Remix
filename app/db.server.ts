@@ -41,4 +41,9 @@ export const message = sqliteTable("message", {
     .references(() => chat.id, { onDelete: "cascade" }),
 });
 
-export const prompt = sqliteTable
+export const prompt = sqliteTable("prompt", {
+  id: text("id")
+    .primaryKey()
+    .notNull()
+    .$defaultFn(() => uuid()),
+  
