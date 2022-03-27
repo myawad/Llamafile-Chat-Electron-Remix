@@ -46,4 +46,7 @@ export const prompt = sqliteTable("prompt", {
     .primaryKey()
     .notNull()
     .$defaultFn(() => uuid()),
-  
+  content: text("content").notNull(),
+  createdAt: text("created_at")
+    .notNull()
+    .defaul
