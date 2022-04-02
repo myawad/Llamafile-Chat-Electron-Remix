@@ -60,4 +60,7 @@ export const db = drizzle(sqlite, { schema: { chat, message, prompt } });
 fs.mkdirSync(path.resolve(os.homedir(), ".remix-llm"), { recursive: true });
 
 migrate(db, {
-  migrationsFolder:
+  migrationsFolder: !process.env.DEV
+    ? path.resolve(__dirname, "../../../drizzle")
+    : "./drizzle",
+});
