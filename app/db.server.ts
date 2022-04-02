@@ -49,4 +49,8 @@ export const prompt = sqliteTable("prompt", {
   content: text("content").notNull(),
   createdAt: text("created_at")
     .notNull()
-    .defaul
+    .default(sql`CURRENT_TIMESTAMP`),
+});
+
+const sqlite = new Database(
+  path.resolve(os.homedir(), ".remix-llm", 
