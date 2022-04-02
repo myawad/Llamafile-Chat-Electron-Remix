@@ -53,4 +53,8 @@ export const prompt = sqliteTable("prompt", {
 });
 
 const sqlite = new Database(
-  path.resolve(os.homedir(), ".remix-llm", 
+  path.resolve(os.homedir(), ".remix-llm", "remix-llm.db")
+);
+export const db = drizzle(sqlite, { schema: { chat, message, prompt } });
+
+f
