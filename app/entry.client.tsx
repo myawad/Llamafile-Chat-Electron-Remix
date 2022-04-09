@@ -4,4 +4,10 @@ import { hydrateRoot } from "react-dom/client";
 
 declare global {
   interface MockRequest {
-    body?: ArrayBuff
+    body?: ArrayBuffer;
+    headers: Record<string, string[]>;
+    method: string;
+    url: string;
+  }
+
+  type MockResponse = { rethrow?: 
