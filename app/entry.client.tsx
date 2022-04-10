@@ -10,4 +10,8 @@ declare global {
     url: string;
   }
 
-  type MockResponse = { rethrow?: 
+  type MockResponse = { rethrow?: boolean } & (
+    | {
+        response: {
+          body: ArrayBuffer;
+          headers: Record<s
