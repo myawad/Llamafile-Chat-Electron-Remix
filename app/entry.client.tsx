@@ -14,4 +14,9 @@ declare global {
     | {
         response: {
           body: ArrayBuffer;
-          headers: Record<s
+          headers: Record<string, string[]>;
+          status: number;
+          statusText?: string;
+        };
+      }
+    | { data: unknown }
