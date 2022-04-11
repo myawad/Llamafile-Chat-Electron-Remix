@@ -28,4 +28,10 @@ declare global {
 }
 
 startTransition(() => {
-  
+  hydrateRoot(
+    document,
+    <StrictMode>
+      <RemixBrowser />
+    </StrictMode>
+  );
+});
