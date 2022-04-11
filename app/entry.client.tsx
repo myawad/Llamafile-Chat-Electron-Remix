@@ -20,3 +20,12 @@ declare global {
         };
       }
     | { data: unknown }
+  );
+
+  interface Window {
+    electronAPI: EventsBridge;
+  }
+}
+
+startTransition(() => {
+  
