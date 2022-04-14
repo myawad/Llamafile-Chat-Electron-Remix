@@ -5,3 +5,8 @@ import { renderToString } from "react-dom/server";
 export default function handleRequest(
   request: Request,
   responseStatusCode: number,
+  responseHeaders: Headers,
+  remixContext: EntryContext
+) {
+  let html = renderToString(
+    <RemixServer contex
