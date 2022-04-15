@@ -9,4 +9,7 @@ export default function handleRequest(
   remixContext: EntryContext
 ) {
   let html = renderToString(
-    <RemixServer contex
+    <RemixServer context={remixContext} url={request.url} />
+  );
+  if (html.startsWith("<html")) {
+    html = "<!DOCTYPE html>
