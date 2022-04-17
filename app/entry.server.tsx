@@ -16,4 +16,6 @@ export default function handleRequest(
   }
   return new Response(html, {
     headers: { "Content-Type": "text/html" },
-    status: r
+    status: responseStatusCode,
+  });
+}
