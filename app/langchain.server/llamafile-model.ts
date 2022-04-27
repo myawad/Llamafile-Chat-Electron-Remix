@@ -26,3 +26,88 @@ export class LlamafileModel extends SimpleChatModel {
   constructor(private params: LlamafileModelParams) {
     super(params);
   }
+
+  _llmType(): string {
+    return "llamafile";
+  }
+
+  async recompile(signal?: AbortSignal) {
+    const args: string[] = [];
+    if (this.params.modelPath) args.push("-m", this.params.modelPath);
+
+    const llamafileProcess = execa(
+      this.params.executablePath,
+      [...args, "--cli", "--recompile"],
+      {
+        shell: true,
+        signal: signal,
+        stdout: "pipe",
+        stderr: "pipe",
+        stdin: "pipe",
+        stripFinalNewline: true,
+      }
+    );
+
+    await new Promise<void>((resolve, reject) => {
+      llamafileProcess.once("exit", (code) => {
+        console.log(`Llamafile process recompile exited with code ${code}`);
+        if (code === 0) resolve();
+        else
+          reject(
+            new Error(`Llamafile process recompile exited with code ${code}`)
+          );
+      });
+    });
+  }
+
+  async *_streamResponseChunks(
+    _messages: BaseMessage[],
+    _options: this["ParsedCallOptions"],
+    _runManager?: CallbackManagerForLLMRun | undefined
+  ): AsyncGenerator<ChatGenerationChunk, any, unknown> {
+    if (!_messages.length) {
+      throw new Error("No messages provided.");
+    }
+    if (_messages.some((message) => typeof message.content !== "string")) {
+      throw new Error("Message content must be a string.");
+    }
+
+    const args: string[] = [];
+    if (this.params.modelPath) args.push("-m", this.params.modelPath);
+    if (typeof this.params.temperature === "number")
+      args.push("--temp", this.params.temperature.toString());
+
+    if (this.params.gpu) {
+      args.push("--gpu", this.params.gpu);
+    }
+    if (this.params.nGpuLayers) {
+      args.push("-ngl", this.params.nGpuLayers.toString());
+    }
+
+    const controller = new AbortController();
+    let manuallyAborted = false;
+    const abort = () => {
+      _options.signal?.addEventListener("abort", abort, { once: true });
+    };
+    _options.signal?.addEventListener("abort", abort, { once: true });
+
+    let debugId = this._debugCounter++;
+    console.log(`Starting llamafile process ${debugId}`);
+    const llamafileProcess = execa(
+      this.params.executablePath,
+      [...args, "-n", "-2", "--silent-prompt", "-f", "/dev/stdin"],
+      {
+        shell: true,
+        signal: controller.signal,
+        stdout: "pipe",
+        stderr: "pipe",
+        stdin: "pipe",
+        stripFinalNewline: true,
+      }
+    );
+    llamafileProcess.once("exit", (code) => {
+      console.log(`Llamafile process ${debugId} exited with code ${code}`);
+      _options.signal?.removeEventListener("abort", abort);
+    });
+
+    if (!llamafileProcess.stdout)
