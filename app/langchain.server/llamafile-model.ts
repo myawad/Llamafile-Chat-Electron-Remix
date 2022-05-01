@@ -111,3 +111,69 @@ export class LlamafileModel extends SimpleChatModel {
     });
 
     if (!llamafileProcess.stdout)
+      throw new Error("No stdout on llamafile process.");
+    if (!llamafileProcess.stdin)
+      throw new Error("No stdin on llamafile process.");
+    if (llamafileProcess.stderr) llamafileProcess.stderr.pipe(process.stderr);
+    llamafileProcess.stdout.pipe(process.stdout);
+
+    llamafileProcess.stdin.write(await this.params.createPrompt(_messages));
+    llamafileProcess.stdin.end();
+
+    let stopBuffer = "";
+    const maxStopLength = Math.max(
+      ...(this.params.stop || []).map((s) => s.length)
+    );
+    try {
+      const decoder = new TextDecoder();
+      let breakOut = false;
+      for await (const chunk of llamafileProcess.stdout) {
+        if (controller.signal.aborted) return;
+        let content = decoder.decode(chunk, { stream: true });
+        if (!content) continue;
+
+        let stopIndex;
+        if (this.params.stop) {
+          stopBuffer += content;
+          for (const stop of this.params.stop) {
+            stopIndex = stopBuffer.indexOf(stop);
+            if (stopIndex !== -1) {
+              content = stopBuffer.slice(0, stopIndex);
+              manuallyAborted = true;
+              breakOut = true;
+              break;
+            }
+          }
+          if (breakOut) break;
+          if (stopBuffer.length > maxStopLength) {
+            stopBuffer = stopBuffer.slice(-maxStopLength);
+          }
+        }
+        if (breakOut) break;
+
+        yield new ChatGenerationChunk({
+          message: new AIMessageChunk({
+            content,
+          }),
+          text: content,
+        });
+        await _runManager?.handleLLMNewToken(content);
+      }
+    } catch (error) {
+      if (manuallyAborted) return;
+      throw error;
+    }
+  }
+  _call(
+    messages: BaseMessage[],
+    options: this["ParsedCallOptions"],
+    runManager?: CallbackManagerForLLMRun | undefined
+  ): Promise<string> {
+    throw new Error("Method not implemented, use streaming instead.");
+  }
+  _combineLLMOutput?(
+    ...llmOutputs: (Record<string, any> | undefined)[]
+  ): Record<string, any> | undefined {
+    return {};
+  }
+}
