@@ -12,4 +12,6 @@ let _hydrated = false;
 export function useRouteFormAction<T>(
   preOptimism?: (formData: FormData) => void,
   postOptimism?: (result: SerializeFrom<T>) => void
-): 
+): [
+  Pick<React.FormHTMLAttributes<HTMLFormElement>, "encType" | "method"> & {
+    action: string | ((for
