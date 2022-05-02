@@ -10,4 +10,6 @@ import {
 
 let _hydrated = false;
 export function useRouteFormAction<T>(
-  pr
+  preOptimism?: (formData: FormData) => void,
+  postOptimism?: (result: SerializeFrom<T>) => void
+): 
