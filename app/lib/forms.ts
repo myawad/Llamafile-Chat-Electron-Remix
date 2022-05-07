@@ -19,4 +19,7 @@ export function useRouteFormAction<T>(
   SerializeFrom<T> | undefined
 ] {
   const formAction = useFormAction();
-  const actionData =
+  const actionData = useActionData<T>();
+  const navigation = useNavigation();
+  const submit = useSubmit();
+  const [hydr
