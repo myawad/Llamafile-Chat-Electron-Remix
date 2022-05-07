@@ -14,4 +14,9 @@ export function useRouteFormAction<T>(
   postOptimism?: (result: SerializeFrom<T>) => void
 ): [
   Pick<React.FormHTMLAttributes<HTMLFormElement>, "encType" | "method"> & {
-    action: string | ((for
+    action: string | ((formData: FormData) => void);
+  },
+  SerializeFrom<T> | undefined
+] {
+  const formAction = useFormAction();
+  const actionData =
