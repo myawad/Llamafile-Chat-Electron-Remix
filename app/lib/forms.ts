@@ -25,4 +25,9 @@ export function useRouteFormAction<T>(
   const [hydrated, setHydrated] = React.useState(_hydrated);
   const deferredsRef = React.useRef<
     {
-      rejec
+      reject: (reason: unknown) => void;
+      resolve: (result: unknown) => void;
+    }[]
+  >([]);
+
+  React.useEf
