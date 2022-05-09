@@ -34,4 +34,8 @@ export function useRouteFormAction<T>(
     if (hydrated) return;
     _hydrated = true;
     setHydrated(true);
-  }, [hydr
+  }, [hydrated]);
+
+  // cleanup deferreds on unmount so the promises don't hang
+  React.useEffect(
+    () =>
