@@ -38,4 +38,6 @@ export function useRouteFormAction<T>(
 
   // cleanup deferreds on unmount so the promises don't hang
   React.useEffect(
-    () =>
+    () => () => {
+      for (const deferred of deferredsRef.current) {
+        deferred.reject(new Er
