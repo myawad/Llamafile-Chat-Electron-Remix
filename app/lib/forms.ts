@@ -40,4 +40,9 @@ export function useRouteFormAction<T>(
   React.useEffect(
     () => () => {
       for (const deferred of deferredsRef.current) {
-        deferred.reject(new Er
+        deferred.reject(new Error("Form was unmounted."));
+      }
+      deferredsRef.current = [];
+    },
+    []
+  );
