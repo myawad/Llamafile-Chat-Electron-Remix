@@ -48,4 +48,10 @@ export function useRouteFormAction<T>(
   );
 
   if (navigation.state === "idle" && typeof actionData !== "undefined") {
-    for (const deferred
+    for (const deferred of deferredsRef.current) {
+      deferred.resolve(actionData);
+    }
+    deferredsRef.current = [];
+  }
+
+  const [formSta
