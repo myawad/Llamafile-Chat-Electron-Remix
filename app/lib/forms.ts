@@ -57,4 +57,7 @@ export function useRouteFormAction<T>(
   const [formState, actionFunction] = useFormState<
     SerializeFrom<T> | undefined,
     FormData
-  >(async (_, 
+  >(async (_, formData) => {
+    await preOptimism?.(formData);
+
+    const promise = new Promise<unknown>((res
