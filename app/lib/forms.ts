@@ -54,4 +54,7 @@ export function useRouteFormAction<T>(
     deferredsRef.current = [];
   }
 
-  const [formSta
+  const [formState, actionFunction] = useFormState<
+    SerializeFrom<T> | undefined,
+    FormData
+  >(async (_, 
