@@ -60,4 +60,7 @@ export function useRouteFormAction<T>(
   >(async (_, formData) => {
     await preOptimism?.(formData);
 
-    const promise = new Promise<unknown>((res
+    const promise = new Promise<unknown>((resolve, reject) => {
+      deferredsRef.current.push({ resolve, reject });
+      submit(formData, {
+       
