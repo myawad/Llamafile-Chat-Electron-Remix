@@ -63,4 +63,7 @@ export function useRouteFormAction<T>(
     const promise = new Promise<unknown>((resolve, reject) => {
       deferredsRef.current.push({ resolve, reject });
       submit(formData, {
-       
+        method: "POST",
+        action: formAction,
+        encType: "multipart/form-data",
+        replace
