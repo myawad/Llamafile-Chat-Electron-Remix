@@ -66,4 +66,10 @@ export function useRouteFormAction<T>(
         method: "POST",
         action: formAction,
         encType: "multipart/form-data",
-        replace
+        replace: true,
+        unstable_viewTransition: true,
+        unstable_flushSync: true,
+      });
+    });
+
+  
