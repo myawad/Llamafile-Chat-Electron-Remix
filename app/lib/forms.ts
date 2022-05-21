@@ -72,4 +72,6 @@ export function useRouteFormAction<T>(
       });
     });
 
-  
+    const result = (await promise) as SerializeFrom<T>;
+    await postOptimism?.(result);
+ 
