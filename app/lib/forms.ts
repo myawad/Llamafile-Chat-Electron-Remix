@@ -79,4 +79,9 @@ export function useRouteFormAction<T>(
 
   return [
     !hydrated
-      ? { action: formAction, encType: "multipart/form-dat
+      ? { action: formAction, encType: "multipart/form-data", method: "POST" }
+      : { action: actionFunction },
+    formState,
+  ];
+}
+
