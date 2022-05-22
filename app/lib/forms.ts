@@ -74,4 +74,9 @@ export function useRouteFormAction<T>(
 
     const result = (await promise) as SerializeFrom<T>;
     await postOptimism?.(result);
- 
+    return result;
+  }, actionData as any);
+
+  return [
+    !hydrated
+      ? { action: formAction, encType: "multipart/form-dat
