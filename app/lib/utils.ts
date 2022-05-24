@@ -6,4 +6,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function debounce<T extends (...args: any[]) => any>(
-  f
+  func: T,
+  waitFor: number
+): T {
+  let timeout: NodeJS.Timeout;
+  return function (this: 
