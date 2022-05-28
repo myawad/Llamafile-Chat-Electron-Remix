@@ -10,4 +10,6 @@ export function debounce<T extends (...args: any[]) => any>(
   waitFor: number
 ): T {
   let timeout: NodeJS.Timeout;
-  return function (this: 
+  return function (this: any, ...args: any[]) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.
