@@ -12,4 +12,6 @@ export function debounce<T extends (...args: any[]) => any>(
   let timeout: NodeJS.Timeout;
   return function (this: any, ...args: any[]) {
     clearTimeout(timeout);
-    timeout = setTimeout(() => func.
+    timeout = setTimeout(() => func.apply(this, args), waitFor);
+  } as T;
+}
