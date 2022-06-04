@@ -19,4 +19,10 @@ export default function App() {
         <Links />
       </head>
       <body className="h-lvh max-h-lvh">
-      
+        <Outlet />
+        <ScrollRestoration />
+        <Scripts />
+      </body>
+    </html>
+  );
+}
