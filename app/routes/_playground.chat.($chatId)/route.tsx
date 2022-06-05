@@ -88,3 +88,101 @@ export const action = serverOnly$(
 
         if (!chatId)
           throw new Error("Chat ID not found or could not be created.");
+
+        if (submission.status !== "success") {
+          return {
+            chatId: null,
+            aiMessageId: null,
+            lastResult: submission.reply(),
+          };
+        }
+
+        const chatController = new AbortController();
+        const abortChatController = () => chatController.abort();
+        request.signal.addEventListener("abort", abortChatController, {
+          once: true,
+        });
+        const completion = await streamChatCompletion(
+          chatId,
+          submission.value.prompt,
+          chatController.signal
+        );
+        await createChatMessage(chatId, "human", submission.value.prompt);
+
+        let finalMessage = "";
+        const output = completion.pipeThrough(
+          new TransformStream({
+            transform(chunk, controller) {
+              controller.enqueue(chunk);
+              finalMessage += chunk;
+              if (typeof send === "function") {
+                send(`message-update`, {
+                  id: aiMessageId,
+                  done: false,
+                  value: finalMessage.trim(),
+                });
+              }
+            },
+            flush() {
+              if (typeof send === "function") {
+                send(`message-update`, {
+                  id: aiMessageId,
+                  done: true,
+                  value: finalMessage.trim(),
+                });
+              }
+            },
+          })
+        );
+        const aiMessageId = await createStreamingChatMessage(
+          chatId,
+          "assistant",
+          output
+        );
+
+        request.signal.removeEventListener("abort", abortChatController);
+
+        return {
+          chatId,
+          aiMessageId,
+          lastResult: submission.reply({}),
+        };
+      default:
+        const deleteChatId = formData.get("delete-chat");
+        if (typeof deleteChatId === "string" && deleteChatId) {
+          await deleteChat(deleteChatId);
+          return { success: false };
+        }
+
+        throw new Error("Invalid form submission.");
+    }
+  }
+);
+
+function Message({
+  id: messageId,
+  who,
+  message: initialMessage,
+}: {
+  id?: string;
+  who: string;
+  message?: string;
+}) {
+  const latestMessage = useLatestMessage(messageId);
+  const message =
+    initialMessage &&
+    latestMessage &&
+    latestMessage.length > initialMessage.length
+      ? latestMessage
+      : initialMessage
+      ? initialMessage
+      : null;
+
+  React.useEffect(() => {
+    document.getElementById("messages")?.scrollTo(0, 9999999);
+  }, [message]);
+
+  return (
+    <div className="flex flex-col space-y-1">
+      <div className="font-medium">{who}</div>
+      <div className="text-muted-foreground">
