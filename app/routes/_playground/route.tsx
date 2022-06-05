@@ -133,3 +133,98 @@ export default function Playground() {
           <div className="absolute top-0 left-0 right-0 z-10">
             <div className="h-1 w-full bg-accent overflow-hidden">
               <div className="animate-progress w-full h-full bg-primary origin-left-right"></div>
+            </div>
+          </div>
+        )}
+        <nav
+          className={cn(
+            "flex-col border-r border-border min-h-0 overflow-y-auto relative",
+            showList ? "w-full md:w-64 flex" : "hidden md:flex w-64"
+          )}
+        >
+          <a
+            className="flex flex-col focus:px-4 focus:py-2 border-b border-border focus:absolute z-10 bg-background sr-only focus:top-0 focus:left-0 focus:right-0 focus:clip-[unset] focus:not-sr-only"
+            href="#main-content"
+            onClick={closeList}
+          >
+            Skip Navigation
+          </a>
+          {!chats?.length ? (
+            <p className="px-4 py-2 text-muted-foreground">No chats...</p>
+          ) : (
+            <Form navigate={false} action="/chat" method="POST">
+              <ul>
+                {chats.map((chat) => (
+                  <li
+                    key={chat.id}
+                    className="flex items-center gap-2 border-b border-border pr-0.5"
+                  >
+                    <NavLink
+                      className="flex-1 flex flex-col px-4 py-2"
+                      to={`/chat/${chat.id}`}
+                      onClick={closeList}
+                    >
+                      {chat.title}
+                    </NavLink>
+                    <Button
+                      type="submit"
+                      name="delete-chat"
+                      value={chat.id}
+                      variant="destructive"
+                      size="icon"
+                    >
+                      <span className="sr-only">delete chat</span>
+                      <TrashIcon />
+                    </Button>
+                  </li>
+                ))}
+              </ul>
+            </Form>
+          )}
+        </nav>
+        <div
+          className="flex flex-1 flex-col overflow-y-hidden"
+          id="main-content"
+        >
+          <Outlet key={chatId} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function DownloadProgress() {
+  const [downloadLlamafileProgress, setDownloadLlamafileProgress] =
+    React.useState(0);
+  React.useEffect(
+    () =>
+      window.electronAPI.onDownloadBaseLlamafileProgress((progress) => {
+        setDownloadLlamafileProgress(progress);
+      }),
+    []
+  );
+  const [downloadPhi2Progress, setDownloadPhi2Progress] = React.useState(0);
+  React.useEffect(
+    () =>
+      window.electronAPI.onDownloadPhi2Progress((progress) => {
+        setDownloadPhi2Progress(progress);
+      }),
+    []
+  );
+
+  return downloadLlamafileProgress > 0 && downloadLlamafileProgress < 100 ? (
+    <>
+      <Progress value={downloadLlamafileProgress} className="flex-1 w-1/2" />
+      <span className="text-sm text-muted-foreground w-1/2 overflow-hidden overflow-ellipsis whitespace-nowrap">
+        downloading llamafile executable
+      </span>
+    </>
+  ) : downloadPhi2Progress > 0 && downloadPhi2Progress < 100 ? (
+    <>
+      <Progress value={downloadPhi2Progress} className="flex-1 w-1/2" />
+      <span className="text-sm text-muted-foreground w-1/2 overflow-hidden overflow-ellipsis whitespace-nowrap">
+        downloading phi-2 model
+      </span>
+    </>
+  ) : null;
+}
