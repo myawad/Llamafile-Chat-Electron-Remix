@@ -291,3 +291,40 @@ export default function Index() {
           }}
         />
         <div className="flex items-center justify-end gap-4">
+          <div className="flex-1 text-sm text-destructive">
+            <div id={sendMessageFields.prompt.errorId}>
+              {sendMessageFields.prompt.errors}
+            </div>
+            <div>{sendMessageForm.errors}</div>
+          </div>
+          <Button disabled={isDownloadingStuff}>Send Message</Button>
+        </div>
+      </Form>
+    </div>
+  );
+}
+
+function useIsDownloadingStuff() {
+  const [downloadLlamafileProgress, setDownloadLlamafileProgress] =
+    React.useState(0);
+  React.useEffect(
+    () =>
+      window.electronAPI.onDownloadBaseLlamafileProgress((progress) => {
+        setDownloadLlamafileProgress(progress);
+      }),
+    []
+  );
+  const [downloadPhi2Progress, setDownloadPhi2Progress] = React.useState(0);
+  React.useEffect(
+    () =>
+      window.electronAPI.onDownloadPhi2Progress((progress) => {
+        setDownloadPhi2Progress(progress);
+      }),
+    []
+  );
+
+  return (
+    (downloadLlamafileProgress > 0 && downloadLlamafileProgress < 100) ||
+    (downloadPhi2Progress > 0 && downloadPhi2Progress < 100)
+  );
+}
