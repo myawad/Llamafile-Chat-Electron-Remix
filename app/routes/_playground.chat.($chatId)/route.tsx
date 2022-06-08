@@ -186,3 +186,108 @@ function Message({
     <div className="flex flex-col space-y-1">
       <div className="font-medium">{who}</div>
       <div className="text-muted-foreground">
+        <Markdown>{message + (!initialMessage ? "..." : "")}</Markdown>
+      </div>
+    </div>
+  );
+}
+
+export default function Index() {
+  const _actionData = useActionData<typeof action>();
+  const actionData =
+    _actionData && "lastResult" in _actionData ? _actionData : undefined;
+  const { messages: loaderMessages } = useLoaderData<typeof loader>();
+  const { chatId } = useParams();
+  const navigate = useNavigate();
+  const navigation = useNavigation();
+
+  const isDownloadingStuff = useIsDownloadingStuff();
+
+  const sendMessageFormRef = React.useRef<HTMLFormElement>(null);
+  const [sendMessageForm, sendMessageFields] = useForm({
+    lastResult: actionData?.lastResult,
+    constraint: getZodConstraint(sendMessageSchema),
+    shouldValidate: "onInput",
+    shouldRevalidate: "onInput",
+    onValidate({ formData }) {
+      return parseWithZod(formData, { schema: sendMessageSchema });
+    },
+    onSubmit() {
+      setTimeout(() => {
+        sendMessageFormRef.current?.reset();
+      }, 1);
+    },
+    id: chatId,
+  });
+
+  const chat = React.useMemo(() => {
+    const messages = [...(loaderMessages || [])];
+
+    if (navigation.formData) {
+      const prompt = String(navigation.formData.get("prompt") || "");
+      if (prompt) {
+        messages.push({
+          id: "pending-human",
+          author: "human",
+          content: prompt,
+        });
+        messages.push({
+          id: "pending-assistant",
+          author: "assistant",
+          content: "...",
+        });
+      }
+    }
+
+    return messages;
+  }, [loaderMessages, navigation, actionData]);
+
+  React.useEffect(() => {
+    if (actionData?.chatId && chatId !== actionData.chatId) {
+      navigate(`/chat/${actionData.chatId}`);
+    }
+  }, [actionData, chatId]);
+
+  React.useEffect(() => {
+    document.getElementById("messages")?.scrollTo(0, 9999999);
+  }, [chat]);
+
+  return (
+    <div className="flex-1 flex flex-col overflow-y-hidden">
+      <div
+        id="messages"
+        className="flex-1 flex flex-col min-h-0 overflow-y-auto container py-4"
+      >
+        {chat.map((message) => (
+          <Message
+            key={message.id}
+            id={message.id}
+            who={message.author}
+            message={message.content}
+          />
+        ))}
+      </div>
+
+      <Label className="sr-only" htmlFor={sendMessageFields.prompt.id}>
+        New Message
+      </Label>
+      <Form
+        {...getFormProps(sendMessageForm)}
+        ref={sendMessageFormRef}
+        method="POST"
+        className="space-y-4 container py-4 border-t border-border"
+      >
+        <input type="hidden" name="intent" value="send-message" />
+        <Textarea
+          {...getTextareaProps(sendMessageFields.prompt)}
+          key={chatId || sendMessageFields.prompt.key}
+          autoFocus
+          disabled={isDownloadingStuff}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" && !event.shiftKey) {
+              event.preventDefault();
+              sendMessageFormRef.current?.requestSubmit();
+            }
+          }}
+        />
+        <div className="flex items-center justify-end gap-4">
