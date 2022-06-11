@@ -13,4 +13,6 @@ import {
   getPrompt,
   getSettings,
 } from "@/data.server/settings";
-import { LlamafileMod
+import { LlamafileModel } from "@/langchain.server/llamafile-model";
+
+export async function stream
