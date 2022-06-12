@@ -15,4 +15,9 @@ import {
 } from "@/data.server/settings";
 import { LlamafileModel } from "@/langchain.server/llamafile-model";
 
-export async function stream
+export async function streamChatCompletion(
+  chatId: string,
+  message: string,
+  signal: AbortSignal
+): Promise<ReadableStream<string>> {
+  const
