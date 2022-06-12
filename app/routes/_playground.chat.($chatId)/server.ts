@@ -26,4 +26,7 @@ export async function streamChatCompletion(
       messages.map((message) => [message.author, message.content])
     ),
   ]);
-  chat
+  chatMessages.push(["human", message]);
+
+  let prompt = "You are a helpful AI assistant.";
+  if (settings.pro
