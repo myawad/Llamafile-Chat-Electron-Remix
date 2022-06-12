@@ -22,4 +22,8 @@ export async function streamChatCompletion(
 ): Promise<ReadableStream<string>> {
   const [settings, chatMessages] = await Promise.all([
     getSettings(),
-    getMessages(chatId).then(
+    getMessages(chatId).then((messages) =>
+      messages.map((message) => [message.author, message.content])
+    ),
+  ]);
+  chat
