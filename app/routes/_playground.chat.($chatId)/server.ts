@@ -20,4 +20,6 @@ export async function streamChatCompletion(
   message: string,
   signal: AbortSignal
 ): Promise<ReadableStream<string>> {
-  const
+  const [settings, chatMessages] = await Promise.all([
+    getSettings(),
+    getMessages(chatId).then(
