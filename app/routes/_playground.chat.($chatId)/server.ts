@@ -29,4 +29,6 @@ export async function streamChatCompletion(
   chatMessages.push(["human", message]);
 
   let prompt = "You are a helpful AI assistant.";
-  if (settings.pro
+  if (settings.promptId) {
+    const selectedPrompt = await getPrompt(settings.promptId);
+    if (selectedPrompt)
