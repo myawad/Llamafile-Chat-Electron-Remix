@@ -43,4 +43,10 @@ export async function streamChatCompletion(
     if (who === "human") {
       messages.push(new HumanMessage(message));
     } else {
-      messages.
+      messages.push(new AIMessage(message));
+    }
+  }
+
+  const llamafileDir = getLlamafileDirectory();
+
+  cons
