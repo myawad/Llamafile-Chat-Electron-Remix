@@ -37,4 +37,6 @@ export async function streamChatCompletion(
   }
 
   const messages = [
-    new SystemMessage
+    new SystemMessage(prompt || "You are a helpful AI assistant."),
+  ];
+  for (const [who, message] of chatMessages) 
