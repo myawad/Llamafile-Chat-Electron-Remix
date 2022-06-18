@@ -39,4 +39,8 @@ export async function streamChatCompletion(
   const messages = [
     new SystemMessage(prompt || "You are a helpful AI assistant."),
   ];
-  for (const [who, message] of chatMessages) 
+  for (const [who, message] of chatMessages) {
+    if (who === "human") {
+      messages.push(new HumanMessage(message));
+    } else {
+      messages.
