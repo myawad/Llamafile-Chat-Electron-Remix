@@ -53,4 +53,6 @@ export async function streamChatCompletion(
     executablePath: path.resolve(llamafileDir, settings.baseLlamafile),
     modelPath: path.resolve(llamafileDir, settings.activeLLM),
     gpu: settings.gpu,
-    nGpuLa
+    nGpuLayers: settings.nGpuLayers,
+    createPrompt: async (messages) =>
+      (await ChatPromptTemplate.fro
