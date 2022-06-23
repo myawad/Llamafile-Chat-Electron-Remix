@@ -55,4 +55,8 @@ export async function streamChatCompletion(
     gpu: settings.gpu,
     nGpuLayers: settings.nGpuLayers,
     createPrompt: async (messages) =>
-      (await ChatPromptTemplate.fro
+      (await ChatPromptTemplate.fromMessages(messages).format({})) +
+      "\nAssistant:",
+    stop: [
+      "\nHuman:",
+      "\nhum
