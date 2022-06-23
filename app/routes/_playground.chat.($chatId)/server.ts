@@ -50,4 +50,7 @@ export async function streamChatCompletion(
   const llamafileDir = getLlamafileDirectory();
 
   const chatModel = new LlamafileModel({
-    executablePath: path.resolve(llamafileDir, s
+    executablePath: path.resolve(llamafileDir, settings.baseLlamafile),
+    modelPath: path.resolve(llamafileDir, settings.activeLLM),
+    gpu: settings.gpu,
+    nGpuLa
