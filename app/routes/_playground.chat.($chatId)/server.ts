@@ -59,4 +59,10 @@ export async function streamChatCompletion(
       "\nAssistant:",
     stop: [
       "\nHuman:",
-      "\nhum
+      "\nhuman:",
+      "\nAssistant:",
+      "\nassistant:",
+      "\nAi:",
+      "\nai:",
+      "\nUser:",
+      "\n
