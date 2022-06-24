@@ -65,4 +65,9 @@ export async function streamChatCompletion(
       "\nAi:",
       "\nai:",
       "\nUser:",
-      "\n
+      "\nuser:",
+    ],
+  });
+  const responseStream = await chatModel.stream(messages, { signal });
+
+  return respon
