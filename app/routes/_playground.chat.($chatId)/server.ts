@@ -73,4 +73,9 @@ export async function streamChatCompletion(
   return responseStream.pipeThrough(
     new TransformStream({
       transform(chunk, controller) {
-        let text = typeof
+        let text = typeof chunk.content === "string" ? chunk.content : "";
+        controller.enqueue(text);
+      },
+    })
+  );
+}
