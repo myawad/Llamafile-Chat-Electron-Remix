@@ -70,4 +70,7 @@ export async function streamChatCompletion(
   });
   const responseStream = await chatModel.stream(messages, { signal });
 
-  return respon
+  return responseStream.pipeThrough(
+    new TransformStream({
+      transform(chunk, controller) {
+        let text = typeof
