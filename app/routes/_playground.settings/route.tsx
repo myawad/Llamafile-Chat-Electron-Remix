@@ -49,4 +49,9 @@ export const meta: MetaFunction = () => {
 };
 
 export const loader = serverOnly$(async () => {
-  const
+  const [
+    llamafileDirectory,
+    llms,
+    prompts,
+    { activeLLM, gpu, promptId, nGpuLayers },
+  ]
