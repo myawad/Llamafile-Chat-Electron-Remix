@@ -37,4 +37,8 @@ import {
   writeSettings,
 } from "@/data.server/settings";
 import { debounce } from "@/lib/utils";
-import { Lab
+import { Label } from "@/components/ui/label";
+
+import { recompileLlamafile } from "./server";
+
+export co
