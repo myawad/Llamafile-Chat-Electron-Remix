@@ -41,4 +41,7 @@ import { Label } from "@/components/ui/label";
 
 import { recompileLlamafile } from "./server";
 
-export co
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Remix LLM | Settings" },
+    { name: "descripti
