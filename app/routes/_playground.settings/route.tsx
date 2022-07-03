@@ -44,4 +44,9 @@ import { recompileLlamafile } from "./server";
 export const meta: MetaFunction = () => {
   return [
     { title: "Remix LLM | Settings" },
-    { name: "descripti
+    { name: "description", content: "Settings for Remix LLM." },
+  ];
+};
+
+export const loader = serverOnly$(async () => {
+  const
