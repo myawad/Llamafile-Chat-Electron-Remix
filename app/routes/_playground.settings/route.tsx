@@ -68,4 +68,9 @@ export const loader = serverOnly$(async () => {
     llms,
     nGpuLayers,
     promptId,
- 
+    prompts,
+  };
+});
+
+export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
+  const formData = aw
