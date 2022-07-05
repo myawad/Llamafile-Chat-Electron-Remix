@@ -58,4 +58,14 @@ export const loader = serverOnly$(async () => {
     getLlamafileDirectory(),
     getLLMs(),
     getPrompts(),
-    getSettings
+    getSettings(),
+  ]);
+
+  return {
+    activeLLM,
+    gpu,
+    llamafileDirectory,
+    llms,
+    nGpuLayers,
+    promptId,
+ 
