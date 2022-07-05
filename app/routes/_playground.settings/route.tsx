@@ -54,4 +54,8 @@ export const loader = serverOnly$(async () => {
     llms,
     prompts,
     { activeLLM, gpu, promptId, nGpuLayers },
-  ]
+  ] = await Promise.all([
+    getLlamafileDirectory(),
+    getLLMs(),
+    getPrompts(),
+    getSettings
