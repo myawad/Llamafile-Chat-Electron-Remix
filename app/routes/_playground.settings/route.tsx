@@ -73,4 +73,7 @@ export const loader = serverOnly$(async () => {
 });
 
 export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
-  const formData = aw
+  const formData = await request.formData();
+  const intent = formData.get("intent");
+  switch (intent) {
+  
