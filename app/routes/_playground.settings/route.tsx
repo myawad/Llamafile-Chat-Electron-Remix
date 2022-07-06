@@ -76,4 +76,6 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
   const formData = await request.formData();
   const intent = formData.get("intent");
   switch (intent) {
-  
+    case "select-model": {
+      const model = String(formData.get("model") || "");
+      cons
