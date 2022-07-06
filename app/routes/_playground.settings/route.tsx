@@ -78,4 +78,6 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
   switch (intent) {
     case "select-model": {
       const model = String(formData.get("model") || "");
-      cons
+      const settings = await getSettings();
+      settings.activeLLM = model;
+      await writeSettings(set
