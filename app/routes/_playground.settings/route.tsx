@@ -84,4 +84,8 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
       return { success: true };
     }
     case "add-prompt": {
-      const content = String(formData.g
+      const content = String(formData.get("content") || "");
+      await addPrompt(content);
+      return { success: true };
+    }
+    case "set-gpu"
