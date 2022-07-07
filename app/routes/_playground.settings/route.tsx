@@ -80,4 +80,8 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
       const model = String(formData.get("model") || "");
       const settings = await getSettings();
       settings.activeLLM = model;
-      await writeSettings(set
+      await writeSettings(settings);
+      return { success: true };
+    }
+    case "add-prompt": {
+      const content = String(formData.g
