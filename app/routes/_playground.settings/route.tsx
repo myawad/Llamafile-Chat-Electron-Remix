@@ -88,4 +88,8 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
       await addPrompt(content);
       return { success: true };
     }
-    case "set-gpu"
+    case "set-gpu": {
+      const gpu = String(formData.get("gpu") || "");
+      if (
+        !gpu ||
+        !["AUTO",
