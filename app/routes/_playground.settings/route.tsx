@@ -98,4 +98,8 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
       }
       const settings = await getSettings();
       settings.gpu = gpu;
-      await writeSettings(sett
+      await writeSettings(settings);
+      await recompileLlamafile();
+      return { success: true };
+    }
+    case "set-n-gpu-
