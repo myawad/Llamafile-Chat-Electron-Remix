@@ -96,3 +96,6 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
       ) {
         return { success: false };
       }
+      const settings = await getSettings();
+      settings.gpu = gpu;
+      await writeSettings(sett
