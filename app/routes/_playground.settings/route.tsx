@@ -92,4 +92,7 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
       const gpu = String(formData.get("gpu") || "");
       if (
         !gpu ||
-        !["AUTO",
+        !["AUTO", "APPLE", "AMD", "NVIDIA", "DISABLE"].includes(gpu)
+      ) {
+        return { success: false };
+      }
