@@ -102,4 +102,7 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
       await recompileLlamafile();
       return { success: true };
     }
-    case "set-n-gpu-
+    case "set-n-gpu-layers": {
+      let toSet = undefined;
+      const raw = formData.get("n-gpu-layers");
+      if
