@@ -105,4 +105,6 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
     case "set-n-gpu-layers": {
       let toSet = undefined;
       const raw = formData.get("n-gpu-layers");
-      if
+      if (raw) {
+        const nGpuLayers = Number(raw);
+        if (Number.isSafeInte
