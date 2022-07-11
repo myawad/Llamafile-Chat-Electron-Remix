@@ -111,4 +111,7 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
           toSet = nGpuLayers;
         }
       }
-      const settings = awa
+      const settings = await getSettings();
+      settings.nGpuLayers = toSet;
+      await writeSettings(settings);
+      return { s
