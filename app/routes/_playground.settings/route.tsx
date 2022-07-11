@@ -114,4 +114,8 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
       const settings = await getSettings();
       settings.nGpuLayers = toSet;
       await writeSettings(settings);
-      return { s
+      return { success: true };
+    }
+    default: {
+      const selectPromptId = formData.get("select-prompt");
+  
