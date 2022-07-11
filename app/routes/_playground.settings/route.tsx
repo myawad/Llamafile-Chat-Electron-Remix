@@ -107,4 +107,8 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
       const raw = formData.get("n-gpu-layers");
       if (raw) {
         const nGpuLayers = Number(raw);
-        if (Number.isSafeInte
+        if (Number.isSafeInteger(nGpuLayers)) {
+          toSet = nGpuLayers;
+        }
+      }
+      const settings = awa
