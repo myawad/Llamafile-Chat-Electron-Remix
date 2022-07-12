@@ -120,3 +120,6 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
       const selectPromptId = formData.get("select-prompt");
       if (typeof selectPromptId === "string" && selectPromptId) {
         const settings = await getSettings();
+        settings.promptId = selectPromptId;
+        await writeSettings(settings);
+        return { success: t
