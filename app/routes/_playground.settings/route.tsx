@@ -135,4 +135,11 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
   }
 });
 
-export default funct
+export default function Index() {
+  const {
+    activeLLM,
+    gpu,
+    llamafileDirectory,
+    llms,
+    nGpuLayers,
+    promptId,
