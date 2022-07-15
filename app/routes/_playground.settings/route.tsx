@@ -126,4 +126,6 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
       }
 
       const deletePromptId = formData.get("delete-prompt");
-      if (typeof deletePromptId 
+      if (typeof deletePromptId === "string" && deletePromptId) {
+        await deletePrompt(deletePromptId);
+        return { 
