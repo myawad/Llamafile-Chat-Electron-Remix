@@ -128,4 +128,11 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
       const deletePromptId = formData.get("delete-prompt");
       if (typeof deletePromptId === "string" && deletePromptId) {
         await deletePrompt(deletePromptId);
-        return { 
+        return { success: true };
+      }
+      throw new Error("Invalid intent");
+    }
+  }
+});
+
+export default funct
