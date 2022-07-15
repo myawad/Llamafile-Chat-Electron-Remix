@@ -122,4 +122,8 @@ export const action = serverOnly$(async ({ request }: ActionFunctionArgs) => {
         const settings = await getSettings();
         settings.promptId = selectPromptId;
         await writeSettings(settings);
-        return { success: t
+        return { success: true };
+      }
+
+      const deletePromptId = formData.get("delete-prompt");
+      if (typeof deletePromptId 
