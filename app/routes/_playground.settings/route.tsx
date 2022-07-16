@@ -145,4 +145,6 @@ export default function Index() {
     promptId,
     prompts,
   } = useLoaderData<typeof loader>();
-  const selectModelFetcher = useFetcher<typeof ac
+  const selectModelFetcher = useFetcher<typeof action>();
+  const selectGPUFetcher = useFetcher<typeof action>();
+  const setNGPULayersFetcher = useFetcher<typeof 
