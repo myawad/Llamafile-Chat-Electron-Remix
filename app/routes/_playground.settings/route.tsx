@@ -143,3 +143,6 @@ export default function Index() {
     llms,
     nGpuLayers,
     promptId,
+    prompts,
+  } = useLoaderData<typeof loader>();
+  const selectModelFetcher = useFetcher<typeof ac
