@@ -147,4 +147,8 @@ export default function Index() {
   } = useLoaderData<typeof loader>();
   const selectModelFetcher = useFetcher<typeof action>();
   const selectGPUFetcher = useFetcher<typeof action>();
-  const setNGPULayersFetcher = useFetcher<typeof 
+  const setNGPULayersFetcher = useFetcher<typeof action>();
+  const revalidator = useRevalidator();
+
+  return (
+    <div className="container p
