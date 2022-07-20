@@ -151,4 +151,5 @@ export default function Index() {
   const revalidator = useRevalidator();
 
   return (
-    <div className="container p
+    <div className="container py-4 space-y-4 flex-1 min-h-0 overflow-auto">
+      <h1 className="text-2xl font-semibold">Settin
