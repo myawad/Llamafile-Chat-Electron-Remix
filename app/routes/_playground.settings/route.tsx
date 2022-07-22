@@ -157,4 +157,6 @@ export default function Index() {
       <Card>
         <CardHeader>
           <CardTitle>Prompt Library</CardTitle>
-       
+          <CardDescription>
+            Your prompt library. Add, remove, and edit prompts.
+          </C
