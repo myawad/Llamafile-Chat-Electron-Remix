@@ -163,4 +163,5 @@ export default function Index() {
         </CardHeader>
         <CardContent>
           <Form method="POST">
- 
+            <input type="hidden" name="intent" value="add-prompt" />
+            <div classNam
