@@ -166,4 +166,5 @@ export default function Index() {
             <input type="hidden" name="intent" value="add-prompt" />
             <div className="flex items-center gap-2">
               <Input name="content" placeholder="Add a prompt" />
- 
+              <Button type="submit" size="icon" variant="outline">
+                <span class
