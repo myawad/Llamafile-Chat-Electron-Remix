@@ -164,4 +164,6 @@ export default function Index() {
         <CardContent>
           <Form method="POST">
             <input type="hidden" name="intent" value="add-prompt" />
-            <div classNam
+            <div className="flex items-center gap-2">
+              <Input name="content" placeholder="Add a prompt" />
+ 
