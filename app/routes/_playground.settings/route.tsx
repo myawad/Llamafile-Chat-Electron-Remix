@@ -167,4 +167,7 @@ export default function Index() {
             <div className="flex items-center gap-2">
               <Input name="content" placeholder="Add a prompt" />
               <Button type="submit" size="icon" variant="outline">
-                <span class
+                <span className="sr-only">add a prompt</span>
+                <PlusIcon />
+              </Button>
+           
