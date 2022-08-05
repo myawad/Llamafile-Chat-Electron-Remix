@@ -170,4 +170,7 @@ export default function Index() {
                 <span className="sr-only">add a prompt</span>
                 <PlusIcon />
               </Button>
-           
+            </div>
+          </Form>
+          {prompts.length > 0 && (
+            <Form method="POST" className="m
