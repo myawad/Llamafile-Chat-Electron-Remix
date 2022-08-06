@@ -173,4 +173,7 @@ export default function Index() {
             </div>
           </Form>
           {prompts.length > 0 && (
-            <Form method="POST" className="m
+            <Form method="POST" className="mt-4">
+              <ul className="space-y-1">
+                {prompts.map((prompt) => (
+ 
