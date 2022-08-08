@@ -176,4 +176,5 @@ export default function Index() {
             <Form method="POST" className="mt-4">
               <ul className="space-y-1">
                 {prompts.map((prompt) => (
- 
+                  <li key={prompt.id} className="flex items-center gap-2">
+                    <Button
