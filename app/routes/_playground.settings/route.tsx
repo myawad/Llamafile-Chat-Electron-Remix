@@ -178,3 +178,6 @@ export default function Index() {
                 {prompts.map((prompt) => (
                   <li key={prompt.id} className="flex items-center gap-2">
                     <Button
+                      type="submit"
+                      name="select-prompt"
+                
