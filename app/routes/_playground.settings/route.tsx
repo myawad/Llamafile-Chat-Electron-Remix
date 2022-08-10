@@ -180,4 +180,6 @@ export default function Index() {
                     <Button
                       type="submit"
                       name="select-prompt"
-                
+                      value={prompt.id}
+                      aria-selected={promptId === prompt.id}
+                      aria
