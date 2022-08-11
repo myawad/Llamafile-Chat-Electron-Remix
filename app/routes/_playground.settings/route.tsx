@@ -182,4 +182,6 @@ export default function Index() {
                       name="select-prompt"
                       value={prompt.id}
                       aria-selected={promptId === prompt.id}
-                      aria
+                      aria-label={`Select prompt: ${prompt.content}`}
+                      variant="outline"
+                      disabled=
