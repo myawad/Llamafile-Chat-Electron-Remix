@@ -184,4 +184,5 @@ export default function Index() {
                       aria-selected={promptId === prompt.id}
                       aria-label={`Select prompt: ${prompt.content}`}
                       variant="outline"
-                      disabled=
+                      disabled={promptId === prompt.id}
+                      className="text-left block text-wrap h-auto f
