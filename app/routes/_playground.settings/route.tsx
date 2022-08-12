@@ -189,4 +189,6 @@ export default function Index() {
                     >
                       {prompt.content}
                     </Button>
-  
+                    <Button
+                      type="submit"
+                      name="delete-p
