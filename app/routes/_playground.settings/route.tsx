@@ -191,4 +191,7 @@ export default function Index() {
                     </Button>
                     <Button
                       type="submit"
-                      name="delete-p
+                      name="delete-prompt"
+                      value={prompt.id}
+                      variant="destructive"
+   
