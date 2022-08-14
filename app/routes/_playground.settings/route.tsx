@@ -194,4 +194,6 @@ export default function Index() {
                       name="delete-prompt"
                       value={prompt.id}
                       variant="destructive"
-   
+                      size="icon"
+                    >
+                      <span className="sr-only">delete
