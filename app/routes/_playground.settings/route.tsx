@@ -196,4 +196,8 @@ export default function Index() {
                       variant="destructive"
                       size="icon"
                     >
-                      <span className="sr-only">delete
+                      <span className="sr-only">delete prompt</span>
+                      <TrashIcon />
+                    </Button>
+                  </li>
+         
