@@ -200,4 +200,9 @@ export default function Index() {
                       <TrashIcon />
                     </Button>
                   </li>
-         
+                ))}
+              </ul>
+            </Form>
+          )}
+        </CardContent>
+      
