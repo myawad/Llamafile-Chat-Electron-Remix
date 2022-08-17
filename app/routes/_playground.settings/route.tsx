@@ -205,4 +205,7 @@ export default function Index() {
             </Form>
           )}
         </CardContent>
-      
+        {!prompts.length && (
+          <CardFooter className="text-sm text-muted-foreground">
+            No prompts yet.
+    
