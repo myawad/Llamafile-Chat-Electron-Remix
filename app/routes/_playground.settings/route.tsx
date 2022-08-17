@@ -208,4 +208,10 @@ export default function Index() {
         {!prompts.length && (
           <CardFooter className="text-sm text-muted-foreground">
             No prompts yet.
-    
+          </CardFooter>
+        )}
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Active M
