@@ -214,4 +214,6 @@ export default function Index() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Active M
+          <CardTitle>Active Model</CardTitle>
+          <CardDescription>The LLM that is currently active.</CardDescription>
+        </CardHea
