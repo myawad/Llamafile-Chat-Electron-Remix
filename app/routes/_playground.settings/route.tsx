@@ -216,4 +216,8 @@ export default function Index() {
         <CardHeader>
           <CardTitle>Active Model</CardTitle>
           <CardDescription>The LLM that is currently active.</CardDescription>
-        </CardHea
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center gap-2">
+            <Select
+  
