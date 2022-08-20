@@ -220,4 +220,6 @@ export default function Index() {
         <CardContent>
           <div className="flex items-center gap-2">
             <Select
-  
+              value={activeLLM}
+              disabled={!llms.length}
+              onValueChange={(value)
