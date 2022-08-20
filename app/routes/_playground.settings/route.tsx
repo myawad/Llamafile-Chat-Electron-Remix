@@ -222,4 +222,6 @@ export default function Index() {
             <Select
               value={activeLLM}
               disabled={!llms.length}
-              onValueChange={(value)
+              onValueChange={(value) => {
+                const formData = new FormData();
+                formData.append("intent",
