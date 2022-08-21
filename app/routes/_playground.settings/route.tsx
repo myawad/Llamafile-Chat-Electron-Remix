@@ -224,4 +224,6 @@ export default function Index() {
               disabled={!llms.length}
               onValueChange={(value) => {
                 const formData = new FormData();
-                formData.append("intent",
+                formData.append("intent", "select-model");
+                formData.append("model", value);
+                selectModelFetcher.subm
