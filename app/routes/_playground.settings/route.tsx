@@ -226,4 +226,7 @@ export default function Index() {
                 const formData = new FormData();
                 formData.append("intent", "select-model");
                 formData.append("model", value);
-                selectModelFetcher.subm
+                selectModelFetcher.submit(formData, { method: "POST" });
+              }}
+            >
+              <SelectTrigger className="w-[180
