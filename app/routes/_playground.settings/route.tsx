@@ -229,4 +229,7 @@ export default function Index() {
                 selectModelFetcher.submit(formData, { method: "POST" });
               }}
             >
-              <SelectTrigger className="w-[180
+              <SelectTrigger className="w-[180px]">
+                <SelectValue placeholder="Select a LLM" />
+              </SelectTrigger>
+ 
