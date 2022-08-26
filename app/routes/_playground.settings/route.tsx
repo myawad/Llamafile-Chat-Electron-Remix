@@ -232,4 +232,7 @@ export default function Index() {
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Select a LLM" />
               </SelectTrigger>
- 
+              <SelectContent>
+                <SelectGroup>
+                  {llms.map((llm) => (
+          
