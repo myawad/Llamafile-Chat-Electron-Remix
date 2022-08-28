@@ -235,4 +235,6 @@ export default function Index() {
               <SelectContent>
                 <SelectGroup>
                   {llms.map((llm) => (
-          
+                    <SelectItem key={llm} value={llm}>
+                      {llm}
+                    </Selec
