@@ -245,4 +245,6 @@ export default function Index() {
             <Button
               size="icon"
               variant="outline"
-       
+              onClick={() => revalidator.revalidate()}
+            >
+              <span className="sr-only">refre
