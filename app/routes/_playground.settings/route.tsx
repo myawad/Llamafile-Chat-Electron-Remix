@@ -247,4 +247,8 @@ export default function Index() {
               variant="outline"
               onClick={() => revalidator.revalidate()}
             >
-              <span className="sr-only">refre
+              <span className="sr-only">refresh LLMs</span>
+              <ReloadIcon />
+            </Button>
+          </div>
+        </CardCon
