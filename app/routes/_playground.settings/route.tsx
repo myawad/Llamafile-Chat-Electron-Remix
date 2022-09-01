@@ -251,4 +251,6 @@ export default function Index() {
               <ReloadIcon />
             </Button>
           </div>
-        </CardCon
+        </CardContent>
+        <CardFooter className="text-sm text-muted-foreground">
+          Add llamafiles to
