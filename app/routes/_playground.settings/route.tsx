@@ -253,4 +253,9 @@ export default function Index() {
           </div>
         </CardContent>
         <CardFooter className="text-sm text-muted-foreground">
-          Add llamafiles to
+          Add llamafiles to the directory below to see them here.
+        </CardFooter>
+      </Card>
+
+      <Card>
+        <CardHea
