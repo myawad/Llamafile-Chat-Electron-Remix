@@ -261,4 +261,8 @@ export default function Index() {
         <CardHeader>
           <CardTitle>Llamafile Directory</CardTitle>
           <CardDescription>
-            The directory where 
+            The directory where the llamafiles are stored.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+        
