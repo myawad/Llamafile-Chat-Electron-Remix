@@ -258,4 +258,7 @@ export default function Index() {
       </Card>
 
       <Card>
-        <CardHea
+        <CardHeader>
+          <CardTitle>Llamafile Directory</CardTitle>
+          <CardDescription>
+            The directory where 
