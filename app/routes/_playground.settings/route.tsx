@@ -265,4 +265,6 @@ export default function Index() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-        
+          <Input disabled value={llamafileDirectory} />
+        </CardContent>
+        <CardFoote
