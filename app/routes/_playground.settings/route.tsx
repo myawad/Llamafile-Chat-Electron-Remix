@@ -267,4 +267,7 @@ export default function Index() {
         <CardContent>
           <Input disabled value={llamafileDirectory} />
         </CardContent>
-        <CardFoote
+        <CardFooter className="text-sm text-muted-foreground">
+          Configurable via $LLAMAFILE_PATH
+        </CardFooter>
+ 
