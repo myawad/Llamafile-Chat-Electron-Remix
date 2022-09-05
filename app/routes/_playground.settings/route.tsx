@@ -270,4 +270,9 @@ export default function Index() {
         <CardFooter className="text-sm text-muted-foreground">
           Configurable via $LLAMAFILE_PATH
         </CardFooter>
- 
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>GPU Settings</CardTitle>
+      
