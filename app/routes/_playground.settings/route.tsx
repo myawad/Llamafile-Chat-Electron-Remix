@@ -275,4 +275,5 @@ export default function Index() {
       <Card>
         <CardHeader>
           <CardTitle>GPU Settings</CardTitle>
-      
+          <CardDescription>Dragons ahead.</CardDescription>
+        </CardHeader
