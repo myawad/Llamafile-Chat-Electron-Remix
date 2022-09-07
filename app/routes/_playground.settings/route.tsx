@@ -276,4 +276,7 @@ export default function Index() {
         <CardHeader>
           <CardTitle>GPU Settings</CardTitle>
           <CardDescription>Dragons ahead.</CardDescription>
-        </CardHeader
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="flex items-center gap-2">
+         
