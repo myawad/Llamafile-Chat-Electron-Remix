@@ -279,4 +279,7 @@ export default function Index() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex items-center gap-2">
-         
+            <Select
+              value={gpu}
+              onValueChange={(value) => {
+                const formData = new
