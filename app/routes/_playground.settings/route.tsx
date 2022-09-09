@@ -282,4 +282,6 @@ export default function Index() {
             <Select
               value={gpu}
               onValueChange={(value) => {
-                const formData = new
+                const formData = new FormData();
+                formData.append("intent", "set-gpu");
+                formData.append("gpu", v
