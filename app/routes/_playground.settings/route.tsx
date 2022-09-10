@@ -284,4 +284,7 @@ export default function Index() {
               onValueChange={(value) => {
                 const formData = new FormData();
                 formData.append("intent", "set-gpu");
-                formData.append("gpu", v
+                formData.append("gpu", value);
+                selectGPUFetcher.submit(formData, { method: "POST" });
+              }}
+ 
