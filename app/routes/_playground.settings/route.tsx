@@ -287,4 +287,6 @@ export default function Index() {
                 formData.append("gpu", value);
                 selectGPUFetcher.submit(formData, { method: "POST" });
               }}
- 
+            >
+              <SelectTrigger className="w-[180px]">
+                <SelectValue placeholder="Select a G
