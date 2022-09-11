@@ -289,4 +289,8 @@ export default function Index() {
               }}
             >
               <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Select a G
+                <SelectValue placeholder="Select a GPU" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <Sel
