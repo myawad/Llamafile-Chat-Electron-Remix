@@ -295,3 +295,5 @@ export default function Index() {
                 <SelectGroup>
                   <SelectItem value="AUTO">AUTO</SelectItem>
                   <SelectItem value="APPLE">APPLE</SelectItem>
+                  <SelectItem value="AMD">AMD</SelectItem>
+                  <SelectItem value="NVIDIA">NVIDIA
