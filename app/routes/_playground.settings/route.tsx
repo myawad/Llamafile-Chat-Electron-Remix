@@ -293,4 +293,5 @@ export default function Index() {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <Sel
+                  <SelectItem value="AUTO">AUTO</SelectItem>
+                  <SelectItem value="APPLE">APPLE</SelectItem>
