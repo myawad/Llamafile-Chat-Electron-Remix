@@ -298,4 +298,7 @@ export default function Index() {
                   <SelectItem value="AMD">AMD</SelectItem>
                   <SelectItem value="NVIDIA">NVIDIA</SelectItem>
                   <SelectItem value="DISABLE">DISABLE</SelectItem>
-            
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+            {selectGPUF
