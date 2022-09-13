@@ -296,4 +296,6 @@ export default function Index() {
                   <SelectItem value="AUTO">AUTO</SelectItem>
                   <SelectItem value="APPLE">APPLE</SelectItem>
                   <SelectItem value="AMD">AMD</SelectItem>
-                  <SelectItem value="NVIDIA">NVIDIA
+                  <SelectItem value="NVIDIA">NVIDIA</SelectItem>
+                  <SelectItem value="DISABLE">DISABLE</SelectItem>
+            
