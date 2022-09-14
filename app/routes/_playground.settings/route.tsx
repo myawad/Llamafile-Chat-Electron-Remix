@@ -301,4 +301,6 @@ export default function Index() {
                 </SelectGroup>
               </SelectContent>
             </Select>
-            {selectGPUF
+            {selectGPUFetcher.state !== "idle" && (
+              <span className="relative flex h-3 w-3">
+                <spa
