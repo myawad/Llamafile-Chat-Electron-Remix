@@ -303,4 +303,4 @@ export default function Index() {
             </Select>
             {selectGPUFetcher.state !== "idle" && (
               <span className="relative flex h-3 w-3">
-                <spa
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-
