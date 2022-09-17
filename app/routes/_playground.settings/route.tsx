@@ -310,4 +310,6 @@ export default function Index() {
           </div>
 
           <div>
-            <Label htm
+            <Label htmlFor="n-gpu-layers" className="mb-2 block">
+              n-gpu-layers
+            </Label
