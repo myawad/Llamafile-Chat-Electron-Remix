@@ -312,4 +312,8 @@ export default function Index() {
           <div>
             <Label htmlFor="n-gpu-layers" className="mb-2 block">
               n-gpu-layers
-            </Label
+            </Label>
+            <Input
+              id="n-gpu-layers"
+              defaultValue={nGpuLayers}
+ 
