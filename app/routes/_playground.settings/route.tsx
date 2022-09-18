@@ -316,4 +316,7 @@ export default function Index() {
             <Input
               id="n-gpu-layers"
               defaultValue={nGpuLayers}
- 
+              type="text"
+              inputMode="numeric"
+              onChange={debounce((event) => {
+      
