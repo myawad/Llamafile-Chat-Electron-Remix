@@ -319,4 +319,6 @@ export default function Index() {
               type="text"
               inputMode="numeric"
               onChange={debounce((event) => {
-      
+                const value = event.target.value;
+                const formData = new FormData();
+           
