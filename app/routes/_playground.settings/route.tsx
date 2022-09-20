@@ -321,4 +321,5 @@ export default function Index() {
               onChange={debounce((event) => {
                 const value = event.target.value;
                 const formData = new FormData();
-           
+                formData.append("intent", "set-n-gpu-layers");
+                formData.append("n-gpu-layers", String(valu
