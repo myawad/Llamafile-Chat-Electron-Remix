@@ -324,4 +324,7 @@ export default function Index() {
                 formData.append("intent", "set-n-gpu-layers");
                 formData.append("n-gpu-layers", String(value));
                 setNGPULayersFetcher.submit(formData, { method: "POST" });
-           
+              }, 200)}
+            />
+            <p className="mt-1 text-sm text-muted-foreground">
+              Number o
