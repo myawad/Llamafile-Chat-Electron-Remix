@@ -329,4 +329,10 @@ export default function Index() {
             <p className="mt-1 text-sm text-muted-foreground">
               Number of layers to store in VRAM. Must be 35 in order to use GPUs
               made by NVIDIA and AMD.
-            </
+            </p>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
