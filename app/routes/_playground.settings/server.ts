@@ -4,4 +4,7 @@ import { LlamafileModel } from "@/langchain.server/llamafile-model";
 import { getLlamafileDirectory, getSettings } from "@/data.server/settings";
 
 export async function recompileLlamafile() {
-  const llamafileDir =
+  const llamafileDir = getLlamafileDirectory();
+  const settings = await getSettings();
+
+  const chatModel = new LlamafileMod
