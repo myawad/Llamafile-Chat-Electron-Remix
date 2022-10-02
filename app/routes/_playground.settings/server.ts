@@ -9,4 +9,7 @@ export async function recompileLlamafile() {
 
   const chatModel = new LlamafileModel({
     executablePath: path.resolve(llamafileDir, settings.baseLlamafile),
-    modelPa
+    modelPath: path.resolve(llamafileDir, settings.activeLLM),
+    gpu: settings.gpu,
+    nGpuLayers: settings.nGpuLayers,
+   
