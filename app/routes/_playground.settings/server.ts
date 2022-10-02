@@ -7,4 +7,6 @@ export async function recompileLlamafile() {
   const llamafileDir = getLlamafileDirectory();
   const settings = await getSettings();
 
-  const chatModel = new LlamafileMod
+  const chatModel = new LlamafileModel({
+    executablePath: path.resolve(llamafileDir, settings.baseLlamafile),
+    modelPa
