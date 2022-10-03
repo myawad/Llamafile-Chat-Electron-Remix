@@ -12,4 +12,7 @@ export async function recompileLlamafile() {
     modelPath: path.resolve(llamafileDir, settings.activeLLM),
     gpu: settings.gpu,
     nGpuLayers: settings.nGpuLayers,
-   
+    createPrompt: async (messages) => "",
+  });
+
+  await chatModel.recompile()
