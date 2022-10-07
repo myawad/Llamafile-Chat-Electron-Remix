@@ -15,4 +15,5 @@ export async function recompileLlamafile() {
     createPrompt: async (messages) => "",
   });
 
-  await chatModel.recompile()
+  await chatModel.recompile();
+}
