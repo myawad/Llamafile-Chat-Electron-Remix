@@ -173,3 +173,71 @@ export default function Setup() {
               <selectModelFetcher.Form method="POST">
                 <input
                   type="hidden"
+                  name="intent"
+                  value="download-base-model"
+                />
+                <div className="flex gap-4 items-center">
+                  <Button
+                    disabled={
+                      selectModelFetcher.state !== "idle" ||
+                      !!selectModelFetcher.data
+                    }
+                  >
+                    {!!selectModelFetcher.data
+                      ? "Downloaded phi-2.Q4_K_M"
+                      : selectModelFetcher.state !== "idle"
+                      ? "Downloading phi-2.Q4_K_M...."
+                      : "Download phi-2.Q4_K_M.llamafile"}
+                  </Button>
+                  {selectModelFetcher.state !== "idle" && (
+                    <Progress value={downloadPhi2Progress} className="flex-1" />
+                  )}
+                </div>
+              </selectModelFetcher.Form>
+              <p>Or select an existing one</p>
+              <div className="flex items-center gap-2">
+                <Select
+                  value={activeLLM}
+                  disabled={!llms.length}
+                  onValueChange={(value) => {
+                    const formData = new FormData();
+                    formData.append("intent", "select-model");
+                    formData.append("model", value);
+                    selectModelFetcher.submit(formData, { method: "POST" });
+                  }}
+                >
+                  <SelectTrigger className="w-[180px]">
+                    <SelectValue placeholder="Select a LLM" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      {llms.map((llm) => (
+                        <SelectItem key={llm} value={llm}>
+                          {llm}
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+                <Button
+                  size="icon"
+                  variant="outline"
+                  onClick={() => revalidator.revalidate()}
+                >
+                  <span className="sr-only">refresh LLMs</span>
+                  <ReloadIcon />
+                </Button>
+              </div>
+
+              <p className="text-muted-foreground text-sm">
+                If you have a different LLM you'd like to use, you can add it to
+                your llamafile directory:
+              </p>
+              <Input disabled value={llamafileDirectory} />
+            </>
+          )}
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
