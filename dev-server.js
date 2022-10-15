@@ -99,3 +99,29 @@ const server = http.createServer(async (req, res) => {
       if (Array.isArray(value)) {
         for (const v of value) {
           headers.append(key, v);
+        }
+      } else if (typeof value === "string") {
+        headers.append(key, value);
+      }
+    }
+    const request = new Request("http://localhost:8080" + (req.url || ""), {
+      body,
+      method,
+      headers,
+      duplex: "half",
+    });
+
+    const formData = await request.formData();
+    const prompt = formData.get("prompt");
+    res.writeHead(200);
+    await streamPromptResponse(res, prompt);
+  } catch (error) {
+    console.error(error);
+    res.writeHead(500);
+    res.end();
+  }
+});
+
+server.listen(8080, () => {
+  console.log("Server is listening on port 8080");
+});
