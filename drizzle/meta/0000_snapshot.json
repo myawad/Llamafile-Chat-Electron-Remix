@@ -6,4 +6,9 @@
   "tables": {
     "chat": {
       "name": "chat",
-      
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+        
