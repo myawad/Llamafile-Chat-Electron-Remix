@@ -15,4 +15,7 @@
           "autoincrement": false
         },
         "title": {
-          "n
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": tr
