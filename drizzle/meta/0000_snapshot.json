@@ -18,4 +18,8 @@
           "name": "title",
           "type": "text",
           "primaryKey": false,
-          "notNull": tr
+          "notNull": true,
+          "autoincrement": false
+        },
+        "created_at": {
+          "name": "creat
