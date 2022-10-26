@@ -31,4 +31,9 @@
         }
       },
       "indexes": {},
-      "foreignKe
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "message": {
+  
