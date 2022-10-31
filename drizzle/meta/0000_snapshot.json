@@ -36,4 +36,8 @@
       "uniqueConstraints": {}
     },
     "message": {
-  
+      "name": "message",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type":
