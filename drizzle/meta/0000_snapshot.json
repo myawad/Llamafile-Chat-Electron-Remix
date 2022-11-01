@@ -40,4 +40,8 @@
       "columns": {
         "id": {
           "name": "id",
-          "type":
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+      
