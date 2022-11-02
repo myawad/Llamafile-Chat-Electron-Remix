@@ -44,4 +44,8 @@
           "primaryKey": true,
           "notNull": true,
           "autoincrement": false
-      
+        },
+        "author": {
+          "name": "author",
+          "type": "text",
+          "prima
