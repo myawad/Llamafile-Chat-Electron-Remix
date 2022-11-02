@@ -48,4 +48,9 @@
         "author": {
           "name": "author",
           "type": "text",
-          "prima
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "content": {
+    
