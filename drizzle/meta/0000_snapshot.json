@@ -53,4 +53,7 @@
           "autoincrement": false
         },
         "content": {
-    
+          "name": "content",
+          "type": "text",
+          "primaryKey": false,
+        
