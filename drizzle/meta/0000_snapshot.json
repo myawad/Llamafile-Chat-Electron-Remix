@@ -60,4 +60,7 @@
           "autoincrement": false
         },
         "created_at": {
-          "name": 
+          "name": "created_at",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
