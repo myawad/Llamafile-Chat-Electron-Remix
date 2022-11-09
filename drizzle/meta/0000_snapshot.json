@@ -70,4 +70,9 @@
         "chat_id": {
           "name": "chat_id",
           "type": "text",
-          "primaryKey"
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "
