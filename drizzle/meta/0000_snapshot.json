@@ -75,4 +75,7 @@
           "autoincrement": false
         }
       },
-      "
+      "indexes": {},
+      "foreignKeys": {
+        "message_chat_id_chat_id_fk": {
+          "name": "mes
