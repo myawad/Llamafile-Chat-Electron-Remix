@@ -78,4 +78,7 @@
       "indexes": {},
       "foreignKeys": {
         "message_chat_id_chat_id_fk": {
-          "name": "mes
+          "name": "message_chat_id_chat_id_fk",
+          "tableFrom": "message",
+          "tableTo": "chat",
+     
