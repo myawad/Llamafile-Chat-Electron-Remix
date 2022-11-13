@@ -91,4 +91,10 @@
           "onUpdate": "no action"
         }
       },
-      "
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "_meta": {
+    
