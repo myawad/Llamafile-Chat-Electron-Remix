@@ -86,4 +86,9 @@
           ],
           "columnsTo": [
             "id"
-         
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "
