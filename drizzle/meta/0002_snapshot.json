@@ -1,0 +1,27 @@
+
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "id": "333956cb-a871-476b-afdf-ee3ed6915014",
+  "prevId": "3b814dfa-d7e4-4d13-b639-a626b88dcfb6",
+  "tables": {
+    "chat": {
+      "name": "chat",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "text",
