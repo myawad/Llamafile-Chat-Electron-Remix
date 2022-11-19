@@ -21,4 +21,7 @@
       "version": "5",
       "when": 1707431733113,
       "tag": "0002_amusing_snowbird",
-     
+      "breakpoints": true
+    }
+  ]
+}
