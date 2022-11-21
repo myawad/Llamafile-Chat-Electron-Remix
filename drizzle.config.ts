@@ -5,4 +5,7 @@ import type { Config } from "drizzle-kit";
 
 export default {
   schema: "./app/db.server.ts",
-  out: "./dri
+  out: "./drizzle",
+  driver: "better-sqlite",
+  dbCredentials: {
+    url: path.resolve(os.homedir(), ".remix
