@@ -8,4 +8,6 @@ export default {
   out: "./drizzle",
   driver: "better-sqlite",
   dbCredentials: {
-    url: path.resolve(os.homedir(), ".remix
+    url: path.resolve(os.homedir(), ".remix-llm", "remix-llm.db"),
+  },
+} satisfies Config;
