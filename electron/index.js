@@ -144,3 +144,53 @@ app.whenReady().then(async () => {
             });
           }
         } catch (error) {}
+      } else {
+        const file = path.resolve(
+          __dirname,
+          "build",
+          "client",
+          url.pathname.slice(1)
+        );
+        try {
+          const isFile = await fsp.stat(file).then((s) => s.isFile());
+          if (isFile) {
+            return new Response(await fsp.readFile(file), {
+              headers: {
+                "content-type":
+                  mime.lookup(path.basename(file)) || "text/plain",
+              },
+            });
+          }
+        } catch {}
+      }
+    }
+
+    try {
+      return await remixHandler(request, {
+        ipcEvent: (...args) => {
+          const windows = BrowserWindow.getAllWindows();
+          for (const win of windows) {
+            win.webContents.send(...args);
+          }
+        },
+      });
+    } catch (error) {
+      console.error(error);
+      return new Response("Internal Server Error", { status: 500 });
+    }
+  });
+
+  await createWindow();
+
+  app.on("activate", () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow();
+    }
+  });
+});
+
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
+  }
+});
