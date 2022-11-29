@@ -4,4 +4,11 @@ export default {
     extraFiles: ["./drizzle"],
     icon: "./public/favicon",
   },
-  reb
+  rebuildConfig: {},
+  makers: [
+    {
+      name: "@electron-forge/maker-squirrel",
+      config: {},
+    },
+    {
+      
