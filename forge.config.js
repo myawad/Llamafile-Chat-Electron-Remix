@@ -15,4 +15,9 @@ export default {
       platforms: ["darwin"],
     },
     {
-      name: "@
+      name: "@electron-forge/maker-deb",
+      config: {
+        options: {
+          icon: "./public/favicon.png",
+        },
+      
