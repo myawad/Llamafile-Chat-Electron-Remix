@@ -20,4 +20,11 @@ export default {
         options: {
           icon: "./public/favicon.png",
         },
-      
+      },
+    },
+    {
+      name: "@electron-forge/maker-rpm",
+      config: {},
+    },
+  ],
+  plugins: [
