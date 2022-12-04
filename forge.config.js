@@ -33,3 +33,9 @@ export default {
       config: {},
     },
   ],
+  publishers: [
+    {
+      name: "@electron-forge/publisher-github",
+      config: {
+        repository: {
+          own
