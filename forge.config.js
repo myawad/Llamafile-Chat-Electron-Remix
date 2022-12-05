@@ -38,4 +38,7 @@ export default {
       name: "@electron-forge/publisher-github",
       config: {
         repository: {
-          own
+          owner: "jacob-ebey",
+          name: "remix-electron-llamafile",
+        },
+        prerelea
