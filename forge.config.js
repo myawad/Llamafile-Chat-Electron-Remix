@@ -41,4 +41,8 @@ export default {
           owner: "jacob-ebey",
           name: "remix-electron-llamafile",
         },
-        prerelea
+        prerelease: true,
+      },
+    },
+  ],
+};
