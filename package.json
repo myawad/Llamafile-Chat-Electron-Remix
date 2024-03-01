@@ -3,4 +3,7 @@
   "name": "remix-electron-llamafile",
   "version": "0.0.3",
   "type": "module",
-  "description": "Chat with LLMs locally utilizing ll
+  "description": "Chat with LLMs locally utilizing llamafile as the underlying model executor.",
+  "license": "MIT",
+  "author": {
+   
