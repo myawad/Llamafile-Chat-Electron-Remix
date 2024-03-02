@@ -10,4 +10,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.c
+    "url": "https://github.com/jacob-ebey/remix-electron-llamafile.git"
+  },
+  "sideEffects": false,
+  "main": "electron/index.js",
+  "s
