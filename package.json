@@ -19,4 +19,5 @@
     "rebuild": "electron-rebuild -f -w better-sqlite3",
     "build": "remix vite:build",
     "dev": "DEV=1 electron ./electron",
-    "generate:migra
+    "generate:migration": "pnpm drizzle-kit generate:sqlite",
+    "lint": "eslint --ignore-path .gitigno
