@@ -20,4 +20,5 @@
     "build": "remix vite:build",
     "dev": "DEV=1 electron ./electron",
     "generate:migration": "pnpm drizzle-kit generate:sqlite",
-    "lint": "eslint --ignore-path .gitigno
+    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "start": "electron
