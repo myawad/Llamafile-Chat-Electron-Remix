@@ -25,3 +25,7 @@
     "typecheck": "tsc",
     "package": "electron-forge package",
     "make": "electron-forge make",
+    "publish": "electron-forge publish"
+  },
+  "overrides": {
+    "react": "0.0.0-experimental
