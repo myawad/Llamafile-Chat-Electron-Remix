@@ -34,4 +34,7 @@
   "dependencies": {
     "@conform-to/react": "^1.0.0",
     "@conform-to/zod": "^1.0.0",
-    "@huggingface/
+    "@huggingface/hub": "^0.13.0",
+    "@langchain/core": "^0.1.21",
+    "@langchain/openai": "^0.0.14",
+    "@ra
