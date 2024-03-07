@@ -48,4 +48,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@remix-run/express": "^2.6.0",
     "@remix-run/node": "^2.6.0",
-    "@remix-run/reac
+    "@remix-run/react": "^2.6.0",
+    "@remix-run/router": "^1.15.0",
+    "@remix-run/server-runtime": "^2.6.0",
+    "better-sqli
