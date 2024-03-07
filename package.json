@@ -51,4 +51,7 @@
     "@remix-run/react": "^2.6.0",
     "@remix-run/router": "^1.15.0",
     "@remix-run/server-runtime": "^2.6.0",
-    "better-sqli
+    "better-sqlite3": "^9.4.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "drizzle-orm": "^0.29.3
