@@ -59,4 +59,7 @@
     "execa": "^8.0.1",
     "mime-types": "^2.1.35",
     "react": "0.0.0-experimental-4b2a1115a-20240202",
-    "react-dom": "0.0.0-experimenta
+    "react-dom": "0.0.0-experimental-4b2a1115a-20240202",
+    "react-markdown": "^9.0.1",
+    "tailwind-merge": "^2.2.1",
+    "tailwin
