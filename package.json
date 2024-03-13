@@ -84,4 +84,6 @@
     "autoprefixer": "^10.4.17",
     "drizzle-kit": "^0.20.14",
     "electron": "^28.2.1",
-    "electr
+    "electron-rebuild": "^3.2.9",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^
