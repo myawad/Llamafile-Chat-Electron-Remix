@@ -98,4 +98,7 @@
     "typescript": "^5.1.6",
     "vite": "^5.0.0",
     "vite-env-only": "^2.2.0",
-    "vite-pl
+    "vite-plugin-externalize-dependencies": "^0.11.0",
+    "vite-tsconfig-paths": "^4.2.1"
+  },
+  "en
