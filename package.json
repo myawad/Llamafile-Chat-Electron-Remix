@@ -94,4 +94,8 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "patch-package": "^8.0.0",
     "postcss": "^8.4.33",
-    "tailwindcss
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.1.6",
+    "vite": "^5.0.0",
+    "vite-env-only": "^2.2.0",
+    "vite-pl
