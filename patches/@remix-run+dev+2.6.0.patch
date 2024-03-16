@@ -4,4 +4,5 @@ index 70f9611..421d443 100644
 +++ b/node_modules/@remix-run/dev/dist/vite/plugin.js
 @@ -683,22 +683,22 @@ const remixVitePlugin = (remixUserConfig = {}) => {
        return () => {
-         // Let user s
+         // Let user servers handle SSR requests in middleware mode,
+         // otherwise the Vite plugin will handle th
