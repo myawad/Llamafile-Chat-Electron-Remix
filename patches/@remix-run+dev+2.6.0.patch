@@ -5,4 +5,6 @@ index 70f9611..421d443 100644
 @@ -683,22 +683,22 @@ const remixVitePlugin = (remixUserConfig = {}) => {
        return () => {
          // Let user servers handle SSR requests in middleware mode,
-         // otherwise the Vite plugin will handle th
+         // otherwise the Vite plugin will handle the request
+-        if (!viteDevServer.config.server.middlewareMode) {
+-          viteDevServer.
