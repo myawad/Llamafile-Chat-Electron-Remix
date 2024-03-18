@@ -11,4 +11,6 @@ index 70f9611..421d443 100644
 -            try {
 -              let build = await viteDevServer.ssrLoadModule(serverBuildId);
 -              let handler = serverRuntime.createRequestHandler(build, "development");
--              let nodeHandler = async (nodeReq, nodeRes) => 
+-              let nodeHandler = async (nodeReq, nodeRes) => {
+-                let req = nodeAdapter.fromNodeRequest(nodeReq);
+-                let res = await handler(req, 
