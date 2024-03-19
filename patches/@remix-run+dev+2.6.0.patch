@@ -13,4 +13,6 @@ index 70f9611..421d443 100644
 -              let handler = serverRuntime.createRequestHandler(build, "development");
 -              let nodeHandler = async (nodeReq, nodeRes) => {
 -                let req = nodeAdapter.fromNodeRequest(nodeReq);
--                let res = await handler(req, 
+-                let res = await handler(req, remixDevLoadContext);
+-                await nodeAdapter.toNodeRequest(res, nodeRes);
+-              };
