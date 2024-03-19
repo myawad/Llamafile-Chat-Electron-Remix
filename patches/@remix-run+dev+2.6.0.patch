@@ -16,3 +16,7 @@ index 70f9611..421d443 100644
 -                let res = await handler(req, remixDevLoadContext);
 -                await nodeAdapter.toNodeRequest(res, nodeRes);
 -              };
+-              await nodeHandler(req, res);
+-            } catch (error) {
+-              next(error);
+-
