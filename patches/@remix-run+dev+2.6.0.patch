@@ -19,4 +19,8 @@ index 70f9611..421d443 100644
 -              await nodeHandler(req, res);
 -            } catch (error) {
 -              next(error);
--
+-            }
+-          });
+-        }
++        // if (!viteDevServer.config.server.middlewareMode) {
++        //   vite
