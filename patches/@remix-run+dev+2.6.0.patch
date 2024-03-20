@@ -23,4 +23,6 @@ index 70f9611..421d443 100644
 -          });
 -        }
 +        // if (!viteDevServer.config.server.middlewareMode) {
-+        //   vite
++        //   viteDevServer.middlewares.use(async (req, res, next) => {
++        //     try {
++        //       let build
