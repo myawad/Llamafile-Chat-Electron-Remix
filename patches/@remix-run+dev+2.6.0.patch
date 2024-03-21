@@ -25,4 +25,5 @@ index 70f9611..421d443 100644
 +        // if (!viteDevServer.config.server.middlewareMode) {
 +        //   viteDevServer.middlewares.use(async (req, res, next) => {
 +        //     try {
-+        //       let build
++        //       let build = await viteDevServer.ssrLoadModule(serverBuildId);
++        //       let handler = ser
