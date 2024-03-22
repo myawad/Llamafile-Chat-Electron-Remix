@@ -30,4 +30,7 @@ index 70f9611..421d443 100644
 +        //       let nodeHandler = async (nodeReq, nodeRes) => {
 +        //         let req = nodeAdapter.fromNodeRequest(nodeReq);
 +        //         let res = await handler(req, remixDevLoadContext);
-+        //         await nodeAdapter.toNodeRequest
++        //         await nodeAdapter.toNodeRequest(res, nodeRes);
++        //       };
++        //       await nodeHandler(req, res);
++        //
