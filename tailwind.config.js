@@ -67,4 +67,5 @@ module.exports = {
           to: { height: "0" },
         },
         progress: {
- 
+          "0%": { transform: " translateX(0) scaleX(0)" },
+          "40%": { transform: "translateX(0) sc
