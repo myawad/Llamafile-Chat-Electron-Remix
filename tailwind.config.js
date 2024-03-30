@@ -68,4 +68,8 @@ module.exports = {
         },
         progress: {
           "0%": { transform: " translateX(0) scaleX(0)" },
-          "40%": { transform: "translateX(0) sc
+          "40%": { transform: "translateX(0) scaleX(0.4)" },
+          "100%": { transform: "translateX(100%) scaleX(0.5)" },
+        },
+      },
+ 
