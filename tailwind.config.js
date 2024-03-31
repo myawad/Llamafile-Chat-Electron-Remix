@@ -78,4 +78,9 @@ module.exports = {
         progress: "progress 1s infinite linear",
       },
       transformOrigin: {
-   
+        "left-right": "0% 50%",
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+};
