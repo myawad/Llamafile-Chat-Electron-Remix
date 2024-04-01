@@ -1,4 +1,9 @@
 {
   "extends": "./tsconfig.base.json",
   "include": ["app/**/*", "shared-api.d.ts", "vite.config.ts"],
-  "com
+  "compilerOptions": {
+    "composite": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "module": "ESNext",
+  
