@@ -6,4 +6,6 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "module": "ESNext",
-  
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "lib": ["DO
