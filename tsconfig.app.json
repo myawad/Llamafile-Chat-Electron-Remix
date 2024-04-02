@@ -12,4 +12,11 @@
     "types": [
       "@remix-run/node",
       "node",
-      "react/experiment
+      "react/experimental",
+      "react-dom/experimental",
+      "vite/client"
+    ],
+    "paths": {
+      "@/*": ["./app/*"]
+    }
+  }
