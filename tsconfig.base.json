@@ -7,4 +7,7 @@
     "allowJs": true,
     "checkJs": true,
     "skipLibCheck": true,
-    "f
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "."
+  }
+}
