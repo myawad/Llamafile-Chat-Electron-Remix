@@ -3,3 +3,8 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "target": "ES2022",
+    "strict": true,
+    "allowJs": true,
+    "checkJs": true,
+    "skipLibCheck": true,
+    "f
