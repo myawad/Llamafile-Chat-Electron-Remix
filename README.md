@@ -1,1 +1,1 @@
-# Llamafile-Chat-Electron-Remix\n\n<img src="./public/favicon.png" width="200" />\n\nThis is a template for creating a Remix + Llamafil
+# Llamafile-Chat-Electron-Remix\n\n<img src="./public/favicon.png" width="200" />\n\nThis is a template for creating a Remix + Llamafile + Electron application.\n\n## Setup\n\n```shellscript\nnpx create-remix@latest --template myawad/Llama
