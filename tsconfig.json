@@ -6,4 +6,7 @@
       "path": "./tsconfig.app.json"
     },
     {
-      "path":
+      "path": "./tsconfig.electron.json"
+    }
+  ]
+}
