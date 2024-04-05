@@ -1,1 +1,1 @@
-# Llamafile-Chat-Elec
+# Llamafile-Chat-Electron-Remix\n\n<img src="./public/favicon.png" width="200" />\n\nThis is a template for creating a Remix + Llamafil
